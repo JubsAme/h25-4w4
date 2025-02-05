@@ -1,0 +1,278 @@
+@charset "UTF-8";
+/*
+Theme Name: TP1 Eddy Martin
+Theme URI: https://referenced.ca
+Author: Eddy Martin
+Author URI: https://github.com/eddytuto
+Description: Thème développé dans le cadre du cours 4w4
+Version: 1.0
+Requires at least: 6.0
+Tested up to: 5.3
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: tp1-em
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/* /////////////////////////////////
+Les variables
+//////////////////////////////////// */
+/* /////////////////////////////////
+Les balise de bases
+//////////////////////////////////// */
+body {
+  font-size: 16px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+h1 {
+  font-size: clamp(2rem, 3vw, 5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1rem, 2.3vw, 2rem);
+}
+
+h4 {
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
+}
+
+h5 {
+  font-size: clamp(0.9rem, 2vw, 1.3rem);
+}
+
+h6 {
+  font-size: clamp(0.8rem, 1.7vw, 1.2rem);
+}
+
+p {
+  font-size: clamp(0.8rem, 1.7vw, 1rem);
+}
+
+/* /////////////////////////////////
+Les composants
+//////////////////////////////////// */
+.recherche {
+  display: flex;
+  width: 12rem;
+}
+.recherche__input {
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.01);
+  flex: 1 0 auto;
+  padding: 3px;
+}
+.recherche__img {
+  flex: 0 0 20px;
+  padding: 3px;
+}
+
+/* /////////////////////////////////
+Les layouts
+//////////////////////////////////// */
+.global {
+  max-width: 1100px;
+  padding: 10vh 5vw;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+/* Styles généraux pour l'entête */
+.entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.entete__logo {
+  top: 2px;
+  left: 2px;
+}
+
+.entete__logo img {
+  width: 100px;
+  height: auto;
+}
+
+.entete__recherche {
+  display: none;
+}
+
+.entete__navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.menu__ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.menu__li {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.menu__ul a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  display: block;
+  padding: 10px;
+}
+
+.menu__ul a:hover {
+  color: #007bff;
+}
+
+#maCheckbox {
+  display: block;
+}
+
+.trait {
+  background: black;
+  width: 30px;
+  height: 2px;
+  margin-bottom: 10px;
+  transition: 0.2s;
+}
+
+label {
+  width: 30px;
+  height: 26px;
+  display: block;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.entete__menu {
+  background: #ededed;
+  width: 100%;
+  padding: 0.2rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  list-style-type: none;
+  transform: translateX(1000%);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#maCheckbox {
+  display: none;
+}
+
+#maCheckbox:checked ~ .entete__menu {
+  transform: translateX(0);
+}
+
+#maCheckbox:checked ~ label .trait:nth-of-type(1) {
+  transform: translateY(12px) rotate(45deg);
+  transition: 0.2s;
+}
+
+#maCheckbox:checked ~ label .trait:nth-of-type(3) {
+  transform: translateY(-12px) rotate(-45deg);
+  transition: 0.2s;
+}
+
+#maCheckbox:checked ~ label .trait:nth-of-type(2) {
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  transition: 0.2s;
+}
+
+@media (min-width: 600px) {
+  .entete__recherche {
+    display: flex;
+    flex-direction: row;
+    justify-self: flex-end;
+  }
+  .entete__navigation {
+    width: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .menu__ul {
+    flex-direction: row;
+    width: auto;
+    justify-content: flex-start;
+  }
+  .menu__li {
+    margin: 0 15px;
+  }
+  #maCheckbox {
+    display: none;
+  }
+  .entete__menu {
+    transform: translateX(0);
+    position: initial;
+    background: transparent;
+    width: auto;
+  }
+  .menu__ul a {
+    padding: 0;
+    color: #333;
+  }
+  .menu__ul a:hover {
+    color: #007bff;
+  }
+  #maCheckbox:checked ~ label .trait:nth-of-type(1) {
+    display: none;
+  }
+  #maCheckbox:checked ~ label .trait:nth-of-type(2) {
+    display: none;
+  }
+  #maCheckbox:checked ~ label .trait:nth-of-type(3) {
+    display: none;
+  }
+  .trait {
+    display: none;
+  }
+}
+.galerie {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr); /* Crée 5 colonnes égales */
+  gap: 20px; /* Espace entre les images */
+  margin-top: 20px; /* Optionnel, ajuster l'espace en haut de la galerie */
+}
+
+.galerie__figure {
+  margin: 0; /* Enlève les marges par défaut autour des éléments */
+}
+
+.galerie__img {
+  width: 100%; /* L'image occupe toute la largeur de la cellule */
+  height: 200px; /* Définir une hauteur fixe pour toutes les images */
+  -o-object-fit: cover;
+     object-fit: cover; /* S'assure que l'image couvre la zone sans être déformée */
+  border-radius: 10px; /* Optionnel, ajout d'arrondis aux coins des images */
+}
+
+@media (min-width: 600px) {
+  .galerie {
+    grid-template-columns: repeat(5, 1fr); /* Crée 5 colonnes égales */
+  }
+}
+.hero {
+  background-image: url("images/maldives.jpg");
+  min-height: 100vh;
+}/*# sourceMappingURL=style.css.map */
