@@ -1,0 +1,16 @@
+.recherche{
+  display: flex;
+  width: 12rem;
+  &__input{
+    border: none;
+    outline: none;
+    background-color: rgba(0,0,0, .01);
+    flex: 1 0 auto;
+    padding: 3px;
+
+  }
+  &__img{
+    flex: 0 0 20px;
+    padding: 3px;
+  }
+}
