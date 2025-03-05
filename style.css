@@ -1,0 +1,200 @@
+@charset "UTF-8";
+/*
+Theme Name: TP1 Juba Ameziane
+Theme URI: https://referenced.ca
+Author: Juba Ameziane
+Author URI: https://github.com/JubsAme
+Description: Thème développé dans le cadre du cours 4w4
+Version: 1.0
+Requires at least: 6.0
+Tested up to: 5.3
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: tp1-em
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/* /////////////////////////////////
+Les variables
+//////////////////////////////////// */
+/* /////////////////////////////////
+Les balise de bases
+//////////////////////////////////// */
+body {
+  font-size: 16px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+h1 {
+  font-size: clamp(2rem, 3vw, 5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1rem, 2.3vw, 2rem);
+}
+
+h4 {
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
+}
+
+h5 {
+  font-size: clamp(0.9rem, 2vw, 1.3rem);
+}
+
+h6 {
+  font-size: clamp(0.8rem, 1.7vw, 1.2rem);
+}
+
+p {
+  font-size: clamp(0.8rem, 1.7vw, 1rem);
+}
+
+/* /////////////////////////////////
+Les composants
+//////////////////////////////////// */
+/* ----------------------------------------- .menu */
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  gap: 10px 0;
+}
+@media screen and (max-width: 800px) {
+  .menu {
+    flex-direction: column;
+  }
+}
+.menu-item a {
+  text-decoration: none;
+  padding: 4px;
+}
+
+.recherche {
+  display: flex;
+  height: 1.6rem;
+  width: 14rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.recherche__input {
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.01);
+  flex: 1 0 auto;
+  padding: 3px;
+}
+.recherche__input:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.recherche__input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  font-style: italic;
+}
+.recherche__img {
+  flex: 0 0 20px;
+  padding: 3px;
+}
+
+.carte {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px 10px;
+  padding: 10px 10px 10px 10px;
+  font-family: "Roboto Slab", sans-serif;
+}
+.carte--grande {
+  flex: 1 1 250px;
+}
+.carte__contenu {
+  background-color: aliceblue;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+}
+.carte__bouton {
+  background-color: #0000ff;
+  color: white;
+  border: solid black 2px;
+  text-decoration: none;
+}
+.carte__bouton a {
+  text-decoration: none;
+}
+/* /////////////////////////////////
+Les layouts
+//////////////////////////////////// */
+.global {
+  max-width: 1100px;
+  padding: 10vh 5vw;
+}
+
+.populaire .global {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.entete__navigation {
+  width: auto;
+  position: static;
+  flex-direction: row;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .entete__navigation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 20px;
+    flex-direction: column;
+    width: 100vw;
+  }
+}
+
+.hero {
+  background-image: url("images/maldives.jpg");
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/*
+  --------------------------------- Layout du pied de page
+*/
+footer {
+  background-color: rgb(236, 136, 13);
+  color: #000;
+}
+
+.piedpage {
+  display: flex;
+  flex-direction: column;
+}
+.piedpage__s1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.piedpage__s1__externe {
+  flex: 0 0 20%;
+}
+.piedpage__s1__externe .menu {
+  display: flex;
+  flex-direction: column;
+}
+.piedpage__s1__adresse {
+  flex: 0 0 40%;
+}
+.piedpage__s1__description {
+  flex: 1 0 400px;
+}/*# sourceMappingURL=style.css.map */

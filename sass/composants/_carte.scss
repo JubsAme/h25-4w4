@@ -1,0 +1,41 @@
+
+.carte{
+    display : flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px 10px;
+    padding: 10px 10px 10px 10px;
+    font-family: 'Roboto Slab', sans-serif;
+   &--grande{
+    flex: 1 1 250px;
+   } 
+   &__image{
+    img{
+
+    }
+   }
+   &__contenu{
+       background-color: aliceblue; 
+       box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+       padding: 10px;
+   }
+   &__titre{
+    
+   }
+   &__description{
+
+   }
+   &__bouton{
+    background-color: #0000ff;
+    color: white;
+    border: solid black 2px;
+    text-decoration: none;
+    a{
+        text-decoration: none;
+    }
+    &--actif{}
+   }
+
+
+
+}
