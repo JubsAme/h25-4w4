@@ -3,8 +3,8 @@
 */
 
 footer{
-  background-color: rgb(236, 136, 13);
-  color : #000;
+  background-color: #A020F0;
+  color : #ffffff;
 }
 
 .piedpage{
@@ -19,6 +19,9 @@ footer{
             & .menu { //ul
                 display : flex;
                 flex-direction: column;
+                & a{
+                    color: #ffffff;
+                }
             }
 
 
@@ -31,5 +34,6 @@ footer{
         &__description{
             flex:1 0 400px;
         }
+
     }
 }

@@ -172,8 +172,8 @@ Les layouts
   --------------------------------- Layout du pied de page
 */
 footer {
-  background-color: rgb(236, 136, 13);
-  color: #000;
+  background-color: #A020F0;
+  color: #ffffff;
 }
 
 .piedpage {
@@ -191,6 +191,9 @@ footer {
 .piedpage__s1__externe .menu {
   display: flex;
   flex-direction: column;
+}
+.piedpage__s1__externe .menu a {
+  color: #ffffff;
 }
 .piedpage__s1__adresse {
   flex: 0 0 40%;
