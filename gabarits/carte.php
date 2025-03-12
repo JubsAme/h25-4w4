@@ -11,10 +11,10 @@
       } 
     ?> 
     </figure>
-  <div class="carte__contenu">
-   <div class="carte__conteneurTitre">
+    <div class="carte__conteneurTitre">
    <h4 class="carte__titre"><?php the_title(); ?></h4>
    </div>
+  <div class="carte__contenu">
     <p class="carte__description"><?php echo wp_trim_words(get_the_content(),10, " ... " ); ?></p>
     <?php the_category()?>
     <p>Température Maximum: <?php the_field("temperature_maximum"); ?>°C</p>

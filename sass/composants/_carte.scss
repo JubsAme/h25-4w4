@@ -35,20 +35,31 @@
             font-weight: bold;
         }
     }
+    &
+    &__conteneurTitre{
+        height: fit-content;
+        width: 340px;
+        background-color: rgba(160, 32, 240, 0.5);
+        box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
+    }
     &__titre {
         // Ajoute ici tes styles pour le titre
-        align-self: center;
-        background-color: #A020F0;
+
     }
 
     &__description {
         // Ajoute ici tes styles pour la description
+        font-weight: bold;
     }
 
     &__bouton {
-        background-color: #0000ff;
-        color: white;
+        background-color: rgba(160, 32, 240);
+        color: black;
+        font-weight: bold;
         border: solid black 2px;
         text-decoration: none;
         padding: 0rem 1rem;
