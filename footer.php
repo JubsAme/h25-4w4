@@ -1,4 +1,8 @@
 <?php $footer_couleurIcones = get_theme_mod('footer_couleurIcones', '');?>
+<?php $footer_mission = get_theme_mod('footer_mission', '');?>
+<?php $footer_adresse = get_theme_mod('footer_adresse', '');?>
+<?php $footer_telephone = get_theme_mod('footer_telephone', '');?>
+
 <footer>
     <div class="piedpage global">
         <section class="piedpage__s1">
@@ -19,13 +23,14 @@
                 </div>
                 <div class="piedpage__s1__adresse__recherche">
                     <h3 class="footerAdresse">
-                        3800 rue Sherbrooke Est.
+                    <p>Notre adresse: <?php echo $footer_adresse ?></p>
+                    <p>Notre numéro de téléphone: <?php echo $footer_telephone ?></p>
                     </h3>
                     <?php get_search_form();   ?>
                 </div>
             </div>
             <div class="piedpage__s1__description">
-                Chez Jubs Airways notre mission est de vous offrir des plans de voyages affordables accompagné par l'expertise de nos employés pour vous offrir des vacances de rêve!
+            <?php echo $footer_mission ?>
             </div>
         </section>
         <section class="piedpage__s2">
