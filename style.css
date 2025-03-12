@@ -147,6 +147,7 @@ Les composants
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 .carte__description {
   font-weight: bold;
