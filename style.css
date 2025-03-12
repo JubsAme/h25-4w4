@@ -104,22 +104,46 @@ Les composants
   flex-direction: column;
   justify-content: space-between;
   margin: 10px 10px;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
   font-family: "Roboto Slab", sans-serif;
+  height: 400px;
+  width: 320px;
 }
 .carte--grande {
   flex: 1 1 250px;
 }
+.carte__image {
+  position: absolute; /* Placer l'image en arrière-plan */
+  background-size: cover; /* Couvre toute la zone */
+  background-position: center; /* Centrer l'image */
+  background-repeat: no-repeat;
+  z-index: -1; /* L'image est derrière le contenu */
+  height: 320px;
+  width: 400px;
+}
 .carte__contenu {
-  background-color: aliceblue;
+  position: relative; /* Le contenu doit être au-dessus de l'image */
+  background-color: rgba(255, 255, 255, 0.5); /* Fond semi-transparent pour la lisibilité du texte */
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
   padding: 10px;
+  z-index: 1; /* Assurer que le contenu soit au-dessus de l'image */
+  height: 400px;
+  width: 320px;
+}
+.carte__contenu .Prix {
+  font-size: large;
+  font-weight: bold;
+}
+.carte__titre {
+  align-self: center;
+  background-color: #A020F0;
 }
 .carte__bouton {
   background-color: #0000ff;
   color: white;
   border: solid black 2px;
   text-decoration: none;
+  padding: 0rem 1rem;
 }
 .carte__bouton a {
   text-decoration: none;
