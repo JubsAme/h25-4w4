@@ -7,7 +7,7 @@
   <figure class="carte__image">
   <?php
         if (has_post_thumbnail()) {
-        the_post_thumbnail('medium'); 
+        the_post_thumbnail('large'); 
       } 
     ?> 
     </figure>

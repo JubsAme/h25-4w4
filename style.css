@@ -111,6 +111,10 @@ Les composants
 }
 .carte--grande {
   flex: 1 1 250px;
+  transition: transform 0.3s ease;
+}
+.carte--grande:hover {
+  transform: scale(1.1);
 }
 .carte__image {
   position: absolute; /* Placer l'image en arrière-plan */
@@ -118,8 +122,9 @@ Les composants
   background-position: center; /* Centrer l'image */
   background-repeat: no-repeat;
   z-index: -1; /* L'image est derrière le contenu */
-  height: 320px;
-  width: 400px;
+  height: 400px;
+  width: 340px;
+  overflow: hidden;
 }
 .carte__contenu {
   position: relative; /* Le contenu doit être au-dessus de l'image */

@@ -7,9 +7,13 @@
     font-family: 'Roboto Slab', sans-serif;
     height: 400px;
     width: 320px;
-
+    
     &--grande {
         flex: 1 1 250px;
+        transition: transform 0.3s ease;
+    }
+    &--grande:hover{
+        transform: scale(1.1);
     }
 
     &__image {
@@ -18,8 +22,9 @@
         background-position: center; /* Centrer l'image */
         background-repeat: no-repeat;
         z-index: -1; /* L'image est derrière le contenu */
-        height: 320px;
-        width: 400px;
+        height: 400px;
+        width: 340px;
+        overflow: hidden;
     }
 
     &__contenu {
