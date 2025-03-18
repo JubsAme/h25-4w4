@@ -33,7 +33,7 @@
                         <th><input type="text" placeholder="..."></th>
                         <th><input type="text" placeholder="..."></th>
                         <th><input type="text" placeholder="..."></th>
-                        <th><input type="button" placeholder="S'inscrire"></th>
+                        <th><input type="button" value ="S'inscrire"></th>
                     </tr>
                 </table>
             </div>
