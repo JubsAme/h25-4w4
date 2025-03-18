@@ -20,5 +20,22 @@
             <div class="hero__icone">
             <?php get_template_part( 'gabarits/icones' ); ?>
             </div>
+            <div class="hero_inscription">
+                <table class="hero_tableau">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Âge</th>
+                        <th>Courriel</th>
+                    </tr>
+                    <tr>
+                        <th><input type="text" placeholder="..."></th>
+                        <th><input type="text" placeholder="..."></th>
+                        <th><input type="text" placeholder="..."></th>
+                        <th><input type="text" placeholder="..."></th>
+                        <th><input type="button" placeholder="S'inscrire"></th>
+                    </tr>
+                </table>
+            </div>
         </div>
     </section>
