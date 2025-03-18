@@ -236,7 +236,13 @@ footer {
 }
 .piedpage__s1__adresse {
   flex: 0 0 40%;
+  border-left: solid black 2px;
+  padding: 0 10px;
+  align-items: center;
 }
 .piedpage__s1__description {
-  flex: 1 0 400px;
+  flex: 0 0 20%;
+  border-left: solid black 2px;
+  padding: 0 10px;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */

@@ -28,11 +28,18 @@ footer{
         }
         &__adresse{
             flex : 0 0 40%;
+            border-left: solid black 2px;
+            padding: 0 10px;
+            align-items: center;
+
             &__coord{}
             &__recherche{}
         }
         &__description{
-            flex:1 0 400px;
+            flex:0 0 20%;
+            border-left: solid black 2px;
+            padding: 0 10px;
+            align-items: center;
         }
 
     }
