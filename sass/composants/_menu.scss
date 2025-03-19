@@ -1,20 +1,17 @@
-/* ----------------------------------------- .menu */
-.menu{ // ul
-    display : flex;
-    flex-direction: row;
-    list-style-type: none;
+.menu {
+    display: flex;
     gap: 10px;
+    list-style: none;
+
     @media screen and (max-width: 800px) {
-    flex-direction: column;
+        flex-direction: column; // Menu vertical sur petits écrans
+        width: 100%;
     }
-    flex-direction: row;
-    list-style-type: none;
-    gap : 10px 0;
-    &-item{ // li
-        
-       a { //a
-        text-decoration : none;
-        padding : 4px;
-       } 
+
+    &-item {
+        a {
+            text-decoration: none;
+            padding: 4px;
+        }
     }
 }

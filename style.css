@@ -57,19 +57,15 @@ p {
 /* /////////////////////////////////
 Les composants
 //////////////////////////////////// */
-/* ----------------------------------------- .menu */
 .menu {
   display: flex;
-  flex-direction: row;
-  list-style-type: none;
   gap: 10px;
-  flex-direction: row;
-  list-style-type: none;
-  gap: 10px 0;
+  list-style: none;
 }
 @media screen and (max-width: 800px) {
   .menu {
     flex-direction: column;
+    width: 100%;
   }
 }
 .menu-item a {
@@ -183,25 +179,58 @@ Les layouts
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  /* Styles pour le bouton burger */
+  /* Masquer la checkbox sur les grands écrans */
+  /* Quand l'input checkbox est coché, on affiche le menu */
 }
 .entete__navigation {
-  width: auto;
-  position: static;
-  flex-direction: row;
-  background-color: transparent;
   display: flex;
   align-items: center;
+  flex-direction: row;
 }
 @media screen and (max-width: 800px) {
   .entete__navigation {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
+    width: 100vw;
     background-color: #fff;
     padding: 20px;
     flex-direction: column;
-    width: 100vw;
+    display: none;
+    z-index: 998;
   }
+}
+.entete .burger-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  width: 35px;
+  height: 30px;
+  justify-content: space-between;
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+}
+.entete .burger-icon .burger-bar {
+  width: 100%;
+  height: 5px;
+  background-color: #333;
+  transition: all 0.3s ease-in-out;
+}
+@media screen and (max-width: 800px) {
+  .entete .burger-icon {
+    display: flex;
+  }
+}
+.entete .burger-toggle {
+  display: none;
+}
+.entete .burger-toggle:checked + .burger-icon + .entete__navigation {
+  display: flex;
 }
 
 .hero {
