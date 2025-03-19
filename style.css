@@ -247,8 +247,22 @@ Les layouts
   max-width: 100vw;
   justify-content: center;
 }
+.hero_tableau {
+  width: 100%; /* Rendre le tableau réactif */
+  max-width: 100%; /* Le tableau ne dépasse pas la largeur du conteneur */
+  table-layout: auto; /* Permet à la table de s'adapter automatiquement */
+  border-collapse: collapse; /* Supprime les espaces entre les cellules */
+  /* Assurez-vous que les champs input à l'intérieur des td occupent toute la largeur disponible */
+}
 .hero_tableau tr th {
   background-color: #A020F0;
+  border: solid black 2px;
+}
+.hero_tableau td input {
+  width: 100%; /* Les champs de saisie occupent toute la largeur de la cellule */
+  padding: 8px;
+  border: 1px solid #ddd; /* Bordure autour des champs de saisie */
+  box-sizing: border-box; /* Inclut padding et bordure dans la largeur totale */
 }
 
 /*
