@@ -22,19 +22,20 @@
             </div>
             <div class="hero_inscription">
                 <table class="hero_tableau">
-                    <tr>
-                        <th>Nom</th>
-                        <th>Prénom</th>
-                        <th>Âge</th>
-                        <th>Courriel</th>
-                    </tr>
-                    <tr>
-                        <th><input type="text" placeholder="..."></th>
-                        <th><input type="text" placeholder="..."></th>
-                        <th><input type="text" placeholder="..."></th>
-                        <th><input type="text" placeholder="..."></th>
-                        <th><input type="button" value ="S'inscrire"></th>
-                    </tr>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Âge</th>
+                    <th>Courriel</th>
+                </tr>
+                <tr>
+                    <td class="hero_tableau_td" data-label="Nom"><input type="text" placeholder="..."></td>
+                    <td class="hero_tableau_td" data-label="Prénom"><input type="text" placeholder="..."></td>
+                    <td class="hero_tableau_td" data-label="Âge"><input type="text" placeholder="..."></td>
+                    <td class="hero_tableau_td" data-label="Courriel"><input type="text" placeholder="..."></td>
+                    <td><input type="button" value="S'inscrire"></td>
+                </tr>
+
                 </table>
             </div>
         </div>

@@ -239,6 +239,7 @@ Les layouts
   min-height: 100vh;
   position: relative;
 }
+
 .hero_inscription {
   position: absolute;
   bottom: 0;
@@ -247,24 +248,106 @@ Les layouts
   max-width: 100vw;
   justify-content: center;
 }
+
 .hero_tableau {
-  width: 100%; /* Rendre le tableau réactif */
-  max-width: 100%; /* Le tableau ne dépasse pas la largeur du conteneur */
-  table-layout: auto; /* Permet à la table de s'adapter automatiquement */
-  border-collapse: collapse; /* Supprime les espaces entre les cellules */
-  /* Assurez-vous que les champs input à l'intérieur des td occupent toute la largeur disponible */
+  width: 100%;
+  border-collapse: collapse;
+  /* Ajustement pour les colonnes */
+  /* Bouton dans la cellule */
 }
-.hero_tableau tr th {
+.hero_tableau_th, .hero_tableau_td {
   background-color: #A020F0;
   border: solid black 2px;
+  padding: 5px 8px; /* Réduction du padding */
+  text-align: left;
+  white-space: nowrap;
 }
-.hero_tableau td input {
-  width: 100%; /* Les champs de saisie occupent toute la largeur de la cellule */
-  padding: 8px;
-  border: 1px solid #ddd; /* Bordure autour des champs de saisie */
-  box-sizing: border-box; /* Inclut padding et bordure dans la largeur totale */
+.hero_tableau_th {
+  width: auto;
+}
+.hero_tableau_td {
+  padding: 5px 8px; /* Réduction du padding des cellules */
+}
+.hero_tableau_th:nth-child(1), .hero_tableau_td:nth-child(1) {
+  width: 15%; /* 15% de la largeur pour la première colonne */
+}
+.hero_tableau_th:nth-child(2), .hero_tableau_td:nth-child(2) {
+  width: 15%; /* 15% pour la deuxième colonne */
+}
+.hero_tableau_th:nth-child(3), .hero_tableau_td:nth-child(3) {
+  width: 10%; /* 10% pour la troisième colonne */
+}
+.hero_tableau_th:nth-child(4), .hero_tableau_td:nth-child(4) {
+  width: 25%; /* 25% pour la quatrième colonne */
+}
+.hero_tableau_th:nth-child(5), .hero_tableau_td:nth-child(5) {
+  width: 15%; /* 15% pour la dernière colonne */
+}
+.hero_tableau_td button {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width: 100%; /* Bouton prenant toute la largeur de la cellule */
+  margin-top: 10px;
+}
+.hero_tableau_td button:hover {
+  background-color: #45a049;
 }
 
+/* Pour les petits écrans (max 768px) */
+@media screen and (max-width: 768px) {
+  .hero_tableau {
+    /* Ajustement pour les colonnes */
+  }
+  .hero_tableau tr {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .hero_tableau_th, .hero_tableau_td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: right;
+  }
+  .hero_tableau_th {
+    display: none; /* Masquer les en-têtes sur les petits écrans */
+  }
+  .hero_tableau_td {
+    background-color: #f4f4f4;
+    text-align: left;
+  }
+  .hero_tableau_td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    width: 40%; /* Largeur réduite du label pour plus de compactité */
+    margin-right: 10px;
+  }
+  .hero_tableau_td button {
+    display: block; /* Assurer que le bouton reste visible sur mobile */
+    margin-top: 10px;
+  }
+  .hero_tableau_th:nth-child(1), .hero_tableau_td:nth-child(1) {
+    width: 100%; /* 15% de la largeur pour la première colonne */
+  }
+  .hero_tableau_th:nth-child(2), .hero_tableau_td:nth-child(2) {
+    width: 100%; /* 15% pour la deuxième colonne */
+  }
+  .hero_tableau_th:nth-child(3), .hero_tableau_td:nth-child(3) {
+    width: 100%; /* 10% pour la troisième colonne */
+  }
+  .hero_tableau_th:nth-child(4), .hero_tableau_td:nth-child(4) {
+    width: 100%; /* 25% pour la quatrième colonne */
+  }
+  .hero_tableau_th:nth-child(5), .hero_tableau_td:nth-child(5) {
+    width: 100%; /* 15% pour la dernière colonne */
+  }
+}
 /*
   --------------------------------- Layout du pied de page
 */
