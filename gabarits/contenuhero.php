@@ -2,6 +2,8 @@
     <?php $hero_background = get_theme_mod('hero_background', '');?>
     <?php $hero_courriel = get_theme_mod('hero_courriel', '');?>
     <?php $hero_couleur = get_theme_mod('hero_couleur', '');?>
+<?php $hero_telephone = get_theme_mod('hero_telephone', '');?>
+
 
 
     <section class="hero" style = "background-image: url(<?php echo $hero_background?>);color:<?php echo $hero_couleur?>">
@@ -17,6 +19,8 @@
                 5800 Sherbrooke-est - Montréal (Québec) H1X 2A2
             </p>
             <p class ="hero_auteur">Auteur: <?php echo $hero_auteur; ?></p>
+            <p class ="hero_telephone">Numéro de téléphone: <?php echo $hero_telephone; ?></p>
+
             <div class="hero__icone">
             <?php get_template_part( 'gabarits/icones' ); ?>
             </div>

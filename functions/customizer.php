@@ -11,12 +11,23 @@ function theme_tp_customize_register($wp_customize) {
     'default' => __('Juba Ameziane', 'theme_tp'),
     'sanitize_callback' => 'sanitize_text_field'
   ));
-  //////////////////////////////////////////////////// Ajout du contrôle de la donnée auteur.
+  //////////////////////////////////////////////////// Ajout du contrôle de la donnée Num. téléphone.
   $wp_customize->add_control('hero_auteur', array(
     'label' => __('Auteur', 'theme_tp'),
     'section' => 'hero_section',
     'type' => 'text',
   ));
+    ///////////////////////////////////////////////////// Ajout de la donnée Num. téléphone.
+    $wp_customize->add_setting('hero_telephone', array(
+      'default' => __('438-883-8261', 'theme_tp'),
+      'sanitize_callback' => 'sanitize_text_field'
+    ));
+    //////////////////////////////////////////////////// Ajout du contrôle de la donnée auteur.
+    $wp_customize->add_control('hero_telephone', array(
+      'label' => __('Num. Téléphone', 'theme_tp'),
+      'section' => 'hero_section',
+      'type' => 'text',
+    ));
   /////////////////////////////////////////////////// Ajout de la donnée image en arriere plan.
   $wp_customize->add_setting('hero_background', array(
     'default' => '',
