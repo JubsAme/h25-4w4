@@ -104,7 +104,7 @@ function theme_tp_customize_register($wp_customize) {
       ));
       //////////////////////////////////////////////////// Ajout du contrôle de la donnée du courriel.
       $wp_customize->add_control('footer_courriel', array(
-        'label' => __('Auteur', 'theme_tp'),
+        'label' => __('Courriel', 'theme_tp'),
         'section' => 'footer_section',
         'type' => 'text',
       ));

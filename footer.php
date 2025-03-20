@@ -12,6 +12,10 @@
                     "menu" => "externe",
                     "container" => "nav",
                 )); ?>
+                    <?php wp_nav_menu(array(
+                    "menu" => "principal",
+                    "container" => "nav",
+                )); ?>
             </div>
             <div class="piedpage__s1__adresse">
                 <div class="piedpage__s1__adresse__coord">

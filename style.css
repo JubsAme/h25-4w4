@@ -186,6 +186,7 @@ Les layouts
   justify-content: space-between;
   align-items: center;
   position: relative;
+  border-bottom: 2px solid black;
   /* Quand la checkbox est cochée, on affiche le menu avec une transition */
   /* Animation pour transformer le burger en X */
 }
