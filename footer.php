@@ -2,6 +2,7 @@
 <?php $footer_mission = get_theme_mod('footer_mission', '');?>
 <?php $footer_adresse = get_theme_mod('footer_adresse', '');?>
 <?php $footer_telephone = get_theme_mod('footer_telephone', '');?>
+<?php $footer_courriel = get_theme_mod('footer_courriel', '');?>
 
 <footer>
     <div class="piedpage global">
@@ -26,6 +27,8 @@
                     <h3 class="footerAdresse">
                     <p>Notre adresse: <?php echo $footer_adresse ?></p>
                     <p>Notre numéro de téléphone: <?php echo $footer_telephone ?></p>
+                    <p>Notre email: <?php echo $footer_courriel ?></p>
+
                     </h3>
                     <?php get_search_form();   ?>
                 </div>

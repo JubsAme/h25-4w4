@@ -97,6 +97,17 @@ function theme_tp_customize_register($wp_customize) {
       'section' => 'footer_section',
       'type' => 'text',
     ));
+       ///////////////////////////////////////////////////// Ajout de la donnée pour le controle du courriel.
+       $wp_customize->add_setting('footer_courriel', array(
+        'default' => __('jubaame@icloud.com', 'theme_tp'),
+        'sanitize_callback' => 'sanitize_text_field'
+      ));
+      //////////////////////////////////////////////////// Ajout du contrôle de la donnée du courriel.
+      $wp_customize->add_control('footer_courriel', array(
+        'label' => __('Auteur', 'theme_tp'),
+        'section' => 'footer_section',
+        'type' => 'text',
+      ));
       //////////////////////////////////////////////// Ajout de la donnée de changement du numéro de téléphone dans le footer
   $wp_customize->add_setting('footer_telephone', array(
     'default' => __('Numero Téléphone', 'theme_tp'),
