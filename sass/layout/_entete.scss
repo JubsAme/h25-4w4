@@ -10,8 +10,8 @@
         flex-direction: row; // Menu horizontal par défaut
 
         @media screen and (max-width: 800px) {
-            position: absolute; // Le menu sort du header
-            top: 0;
+            position: absolute; // Le menu reste dans l'entête
+            top: 100%; // Le menu s'affiche juste en dessous de l'en-tête
             left: 0;
             width: 100vw; // Prendre 100% de la largeur de l'écran
             background-color: #fff;
@@ -31,10 +31,8 @@
         width: 35px;  // Taille du bouton burger
         height: 30px; // Hauteur du bouton burger
         justify-content: space-between;
-        position: fixed; // Fixe le bouton en haut à droite
-        top: 80px;  // Réduit la valeur du top pour abaisser le bouton burger
-        right: 20px; // Positionnement à droite
-        z-index: 1000; // Augmente le z-index pour garantir que le bouton burger est au-dessus du menu
+        // Enlever le positionnement "fixed"
+        z-index: 1000; // Garantir que le bouton burger est au-dessus du menu
 
         .burger-bar {
             width: 100%;
