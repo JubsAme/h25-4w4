@@ -182,7 +182,8 @@ Les layouts
   position: relative;
   /* Styles pour le bouton burger */
   /* Masquer la checkbox sur les grands écrans */
-  /* Quand l'input checkbox est coché, on affiche le menu */
+  /* Quand la checkbox est cochée, on affiche le menu */
+  /* Animation pour transformer le burger en X */
 }
 .entete__navigation {
   display: flex;
@@ -210,6 +211,7 @@ Les layouts
   width: 35px;
   height: 30px;
   justify-content: space-between;
+  padding-right: 40px;
   z-index: 1000;
 }
 .entete .burger-icon .burger-bar {
@@ -228,6 +230,22 @@ Les layouts
 }
 .entete .burger-toggle:checked + .burger-icon + .entete__navigation {
   display: flex;
+}
+.entete .burger-toggle:checked + .burger-icon .burger-bar:nth-child(1) {
+  transform: rotate(45deg); /* Première barre tourne à 45° */
+  position: relative;
+  top: 10px; /* Ajuste la position de la barre */
+  transform-origin: center; /* Point d'origine de la rotation au centre */
+}
+.entete .burger-toggle:checked + .burger-icon .burger-bar:nth-child(2) {
+  opacity: 0; /* La barre du milieu devient invisible */
+  transform-origin: center; /* Point d'origine de la rotation au centre */
+}
+.entete .burger-toggle:checked + .burger-icon .burger-bar:nth-child(3) {
+  transform: rotate(-45deg); /* Troisième barre tourne à -45° */
+  position: relative;
+  top: -10px; /* Ajuste la position de la barre */
+  transform-origin: center; /* Point d'origine de la rotation au centre */
 }
 
 .hero {
