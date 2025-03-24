@@ -459,7 +459,8 @@ footer {
   padding: 12px 25px;
   border-radius: 5px;
   font-size: 1.1rem;
-  margin-top: 170px; /* Espacement entre le bouton et le texte */
+  margin-top: 110px; /* Espacement entre le bouton et le texte */
+  margin-bottom: 60px;
   transition: background-color 0.3s ease;
   /* Ajout d'un effet de survol */
 }
