@@ -418,4 +418,12 @@ footer {
   flex: 0 0 20%;
   border-left: solid black 2px;
   padding: 0 10px;
+}
+
+.section_404 {
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }/*# sourceMappingURL=style.css.map */
