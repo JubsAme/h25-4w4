@@ -7,7 +7,7 @@
     <p class="section_404__texte">
     Pas de panique, cher membre explorateur ! Vous avez dérivé un peu trop loin des destinations de rêve que notre club a soigneusement sélectionnées pour vous. Reprenez votre périple en cliquant sur 'Accueil' pour découvrir à nouveau nos voyages d’exception !
     </p>
-    <a href="<?php echo home_url(); ?>" class="btn-home">Lien Customizer</a>
+    <a href="<?php echo home_url(); ?>" class="section_404__boutonAccueil">Lien Customizer</a>
     <div class="section_404__menu"></div>
     <?php wp_nav_menu(array(
                     'menu' => '404ExamIntra',
