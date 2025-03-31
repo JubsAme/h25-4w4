@@ -1,18 +1,25 @@
 <?php $ExamenIntra404_background = get_theme_mod('ExamenIntra404_background', '');?>
+<?php $titre_404 = get_theme_mod('titre_404', '');?>
+<?php $texte_404 = get_theme_mod('texte_404', '');?>
+<?php $bouton_404 = get_theme_mod('bouton_404', '');?>
+<?php $couleur_404 = get_theme_mod('couleur_404', '');?>
+
 <?php get_header(); ?>
-  <section class="section_404" style="background-image: url(<?php echo $ExamenIntra404_background?>);">
+  <section class="section_404" style="background-image: url(<?php echo $ExamenIntra404_background?>);color:<?php echo $couleur_404?>">
     <h1 class="section_404__titre">
-    Oops, vous avez échoué sur l'île 404 !
+    <?php echo $titre_404?>
     </h1>
     <p class="section_404__texte">
-    Pas de panique, cher membre explorateur ! Vous avez dérivé un peu trop loin des destinations de rêve que notre club a soigneusement sélectionnées pour vous. Reprenez votre périple en cliquant sur 'Accueil' pour découvrir à nouveau nos voyages d’exception !
+    <?php echo $texte_404?>
+    
     </p>
-    <a href="<?php echo home_url(); ?>" class="section_404__boutonAccueil">Lien Customizer</a>
-    <div class="section_404__menu"></div>
+    <a href="<?php echo home_url(); ?>" class="section_404__boutonAccueil">
+    <?php echo $bouton_404?>
+    </a>
     <?php wp_nav_menu(array(
                     'menu' => '404ExamIntra',
-                    'container' => 'a',
-                    'container_class' => 'section_404__menu'
+                    'container' => 'nav',
+                    'container_class' => 'section_404__nav'
                 )); ?>
   </section>
 <?php get_footer(); ?>

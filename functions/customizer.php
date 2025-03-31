@@ -152,6 +152,49 @@ function theme_tp_customize_register($wp_customize) {
       'label' => __('404 Image Examen Intra', 'theme_31w'),
       'section' => 'erreur404_section',
     )));
+      ///////////////////////////////////////////////////// Ajout de la donnée auteur.
+  $wp_customize->add_setting('titre_404', array(
+    'default' => __('', 'theme_tp'),
+    'sanitize_callback' => 'sanitize_text_field'
+  ));
+  //////////////////////////////////////////////////// Ajout du contrôle de la donnée Num. téléphone.
+  $wp_customize->add_control('titre_404', array(
+    'label' => __('Titre', 'theme_tp'),
+    'section' => 'erreur404_section',
+    'type' => 'text',
+  ));
+  ///////////////////////////////////////////////////// Ajout de la donnée auteur.
+  $wp_customize->add_setting('texte_404', array(
+    'default' => __('', 'theme_tp'),
+    'sanitize_callback' => 'sanitize_text_field'
+  ));
+  //////////////////////////////////////////////////// Ajout du contrôle de la donnée Num. téléphone.
+  $wp_customize->add_control('texte_404', array(
+    'label' => __('Texte', 'theme_tp'),
+    'section' => 'erreur404_section',
+    'type' => 'text',
+  ));
+  ///////////////////////////////////////////////////// Ajout de la donnée auteur.
+  $wp_customize->add_setting('bouton_404', array(
+    'default' => __('', 'theme_tp'),
+    'sanitize_callback' => 'sanitize_text_field'
+  ));
+  //////////////////////////////////////////////////// Ajout du contrôle de la donnée Num. téléphone.
+  $wp_customize->add_control('bouton_404', array(
+    'label' => __('Bouton', 'theme_tp'),
+    'section' => 'erreur404_section',
+    'type' => 'text',
+  ));
+  /////////////////////////////////////////////////// Ajout de la donnée couleur des textes.
+  $wp_customize->add_setting('couleur_404', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+  /////////////////////////////////////////////////// Ajout du contrôle de la donnée de la couleur des textes.
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'couleur_404', array(
+    'label' => __('Erreur 404 Couleur Textes', 'theme_31w'),
+    'section' => 'erreur404_section',
+  )));
   }
   add_action('customize_register', 'theme_tp_customize_register');
 ?>
