@@ -426,4 +426,18 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+.section_404__titre {
+  display: inline-block;
+  height: fit-content;
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: yellow;
+}
+.section_404__texte {
+  display: inline-block;
+  height: fit-content;
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: yellow;
 }/*# sourceMappingURL=style.css.map */
