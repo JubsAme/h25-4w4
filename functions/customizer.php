@@ -134,6 +134,24 @@ function theme_tp_customize_register($wp_customize) {
       'label' => __('404 Background Image', 'theme_31w'),
       'section' => '404_section',
     )));
+
+
+
+    //////////////// Création de la section 404 dans le customizer pour l'examen Intra.//////////////////////
+  $wp_customize->add_section('erreur404_section', array(
+    'title' => __('Section 404 Examen Intra', 'theme_tp'),
+    'priority' => 30,
+  ));
+    /////////////////////////////////////////////////// Ajout de la donnée image en arriere plan.
+    $wp_customize->add_setting('ExamenIntra404_background', array(
+      'default' => '',
+      'sanitize_callback' => 'esc_url_raw',
+    ));
+    /////////////////////////////////////////////////// Ajout du contrôle de la donnée du background
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'ExamenIntra404_background', array(
+      'label' => __('404 Image Examen Intra', 'theme_31w'),
+      'section' => 'erreur404_section',
+    )));
   }
   add_action('customize_register', 'theme_tp_customize_register');
 ?>

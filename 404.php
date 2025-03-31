@@ -1,5 +1,6 @@
+<?php $ExamenIntra404_background = get_theme_mod('ExamenIntra404_background', '');?>
 <?php get_header(); ?>
-  <section class="section_404">
+  <section class="section_404" style="background-image: url(<?php echo $ExamenIntra404_background?>);">
     <h1 class="section_404__titre">
     Oops, vous avez échoué sur l'île 404 !
     </h1>
