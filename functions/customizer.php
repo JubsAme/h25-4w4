@@ -29,15 +29,15 @@ function theme_tp_customize_register($wp_customize) {
       'type' => 'text',
     ));
   /////////////////////////////////////////////////// Ajout de la donnée image en arriere plan.
-  $wp_customize->add_setting('hero_background', array(
-    'default' => '',
-    'sanitize_callback' => 'esc_url_raw',
-  ));
+  //$wp_customize->add_setting('hero_background', array(
+  //  'default' => '',
+  //  'sanitize_callback' => 'esc_url_raw',
+  // ));
   /////////////////////////////////////////////////// Ajout du contrôle de la donnée du background
-  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background', array(
-    'label' => __('Hero Background Image', 'theme_31w'),
-    'section' => 'hero_section',
-  )));
+  // $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background', array(
+  //  'label' => __('Hero Background Image', 'theme_31w'),
+  //  'section' => 'hero_section',
+  // )));
     ///////////////////////////////////////////////////// Ajout de la donnée pour le controle du courriel.
     $wp_customize->add_setting('hero_courriel', array(
       'default' => __('jubaame@icloud.com', 'theme_tp'),
@@ -195,6 +195,19 @@ function theme_tp_customize_register($wp_customize) {
     'label' => __('Erreur 404 Couleur Textes', 'theme_31w'),
     'section' => 'erreur404_section',
   )));
+  //////////////////////////////// ajout de la données image en background
+
+  for ($k = 0; $k<3 ; $k++) {
+  $wp_customize->add_setting('hero_background_' . $k, array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+  ///////////////////////////////// ajout du contrôle de la donnée
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_' . $k, array(
+    'label' => __('Image en arrière plan ' . ($k+1) , 'theme_tp'),
+    'section' => 'hero_section',
+  )));
+  }
   }
   add_action('customize_register', 'theme_tp_customize_register');
 ?>

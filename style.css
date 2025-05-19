@@ -165,6 +165,24 @@ Les composants
 .carte__bouton a {
   text-decoration: none;
 }
+/**
+bouton-categorie.scss ------------------------------ .categorie__ul
+*/
+.categorie__ul {
+  display: flex;
+  gap: 5px;
+  list-style-type: none;
+}
+.categorie__ul__li {
+  padding: 3px;
+  border: 1px solid #aaa;
+  background-color: rgb(255, 0, 255);
+}
+
+.vague {
+  position: relative;
+}
+
 /* /////////////////////////////////
 Les layouts
 //////////////////////////////////// */
@@ -266,14 +284,64 @@ Les layouts
   transform-origin: center;
 }
 
-/*Styles pour la section hero*/
 .hero {
-  background-image: url("images/maldives.jpg");
-  background-repeat: no-repeat;
+  position: relative;
   min-height: 100vh;
+  background-repeat: no-repeat;
+}
+.hero .hero__radio {
   position: relative;
 }
+.hero .hero__radio input.hero__radio__input {
+  display: none;
+}
+.hero .hero__radio .hero__radio__labels {
+  position: absolute;
+  top: 700px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 100;
+}
+.hero .hero__radio label {
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+}
+.hero .hero__radio .hero__carrousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+}
+.hero .hero__radio #radio0:checked ~ #carrousel0,
+.hero .hero__radio #radio1:checked ~ #carrousel1,
+.hero .hero__radio #radio2:checked ~ #carrousel2 {
+  opacity: 1;
+  pointer-events: auto;
+}
+.hero .hero__contenu {
+  position: relative;
+  z-index: 10;
+  padding-bottom: 60px;
+}
 
+/* Styles de la section d'inscription */
 .hero_inscription {
   position: absolute;
   bottom: 0;
@@ -283,16 +351,15 @@ Les layouts
   justify-content: center;
 }
 
+/* Tableau de la section d'inscription */
 .hero_tableau {
   width: 100%;
   border-collapse: collapse;
-  /* Ajustement pour les colonnes */
-  /* Bouton dans la cellule */
 }
 .hero_tableau_th, .hero_tableau_td {
-  background-color: #A020F0;
+  background-color: #a020f0;
   border: solid black 2px;
-  padding: 5px 8px; /* Réduction du padding */
+  padding: 5px 8px;
   text-align: left;
   white-space: nowrap;
 }
@@ -300,43 +367,40 @@ Les layouts
   width: auto;
 }
 .hero_tableau_td {
-  padding: 5px 8px; /* Réduction du padding des cellules */
+  padding: 5px 8px;
 }
 .hero_tableau_th:nth-child(1), .hero_tableau_td:nth-child(1) {
-  width: 15%; /* 15% de la largeur pour la première colonne */
+  width: 15%;
 }
 .hero_tableau_th:nth-child(2), .hero_tableau_td:nth-child(2) {
-  width: 15%; /* 15% pour la deuxième colonne */
+  width: 15%;
 }
 .hero_tableau_th:nth-child(3), .hero_tableau_td:nth-child(3) {
-  width: 10%; /* 10% pour la troisième colonne */
+  width: 10%;
 }
 .hero_tableau_th:nth-child(4), .hero_tableau_td:nth-child(4) {
-  width: 25%; /* 25% pour la quatrième colonne */
+  width: 25%;
 }
 .hero_tableau_th:nth-child(5), .hero_tableau_td:nth-child(5) {
-  width: 15%; /* 15% pour la dernière colonne */
+  width: 15%;
 }
 .hero_tableau_td button {
   display: inline-block;
   padding: 8px 15px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   cursor: pointer;
   text-align: center;
-  width: 100%; /* Bouton prenant toute la largeur de la cellule */
+  width: 100%;
   margin-top: 10px;
 }
 .hero_tableau_td button:hover {
   background-color: #45a049;
 }
 
-/* Pour les petits écrans (max 768px) */
+/* Responsive pour petits écrans */
 @media screen and (max-width: 768px) {
-  .hero_tableau {
-    /* Ajustement pour les colonnes */
-  }
   .hero_tableau tr {
     display: block;
     margin-bottom: 10px;
@@ -348,7 +412,7 @@ Les layouts
     text-align: right;
   }
   .hero_tableau_th {
-    display: none; /* Masquer les en-têtes sur les petits écrans */
+    display: none;
   }
   .hero_tableau_td {
     background-color: #f4f4f4;
@@ -359,27 +423,15 @@ Les layouts
     font-weight: bold;
     text-transform: uppercase;
     display: inline-block;
-    width: 40%; /* Largeur réduite du label pour plus de compactité */
+    width: 40%;
     margin-right: 10px;
   }
   .hero_tableau_td button {
-    display: block; /* Assurer que le bouton reste visible sur mobile */
+    display: block;
     margin-top: 10px;
   }
-  .hero_tableau_th:nth-child(1), .hero_tableau_td:nth-child(1) {
-    width: 100%; /* 15% de la largeur pour la première colonne */
-  }
-  .hero_tableau_th:nth-child(2), .hero_tableau_td:nth-child(2) {
-    width: 100%; /* 15% pour la deuxième colonne */
-  }
-  .hero_tableau_th:nth-child(3), .hero_tableau_td:nth-child(3) {
-    width: 100%; /* 10% pour la troisième colonne */
-  }
-  .hero_tableau_th:nth-child(4), .hero_tableau_td:nth-child(4) {
-    width: 100%; /* 25% pour la quatrième colonne */
-  }
-  .hero_tableau_th:nth-child(5), .hero_tableau_td:nth-child(5) {
-    width: 100%; /* 15% pour la dernière colonne */
+  .hero_tableau_td:nth-child(n) {
+    width: 100%;
   }
 }
 /*

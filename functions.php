@@ -1,6 +1,15 @@
 <?php
 $functions_dir = get_template_directory() . '/functions/';
 // Inclure les fichiers spécifiques
-include_once $functions_dir . 'customizer.php';
-include_once $functions_dir . 'options.php';
+$function_files = array(
+    'generateur.php',
+    'customizer.php',
+    'options.php'
+);
+
+ 
+ // Boucle pour inclure tous les fichiers
+ foreach ($function_files as $file) {
+     include_once $functions_dir . $file;
+ }
 ?>

@@ -1,12 +1,37 @@
 <?php $hero_auteur = get_theme_mod('hero_auteur', '');?>
-    <?php $hero_background = get_theme_mod('hero_background', '');?>
-    <?php $hero_courriel = get_theme_mod('hero_courriel', '');?>
-    <?php $hero_couleur = get_theme_mod('hero_couleur', '');?>
+<?php 
+for ($k=0;$k<3;$k++){
+$hero_background[$k] = get_theme_mod('hero_background_'.$k, '');
+}
+?>
+<?php $hero_courriel = get_theme_mod('hero_courriel', '');?>
+<?php $hero_couleur = get_theme_mod('hero_couleur', '');?>
 <?php $hero_telephone = get_theme_mod('hero_telephone', '');?>
 
 
 
-    <section class="hero" style = "background-image: url(<?php echo $hero_background?>);color:<?php echo $hero_couleur?>">
+    <section class="hero">
+
+      <div class="hero__radio">
+        <!-- Inputs radio -->
+        <input type="radio" name="carroussel" id="radio0" class="hero__radio__input" checked>
+        <input type="radio" name="carroussel" id="radio1" class="hero__radio__input">
+        <input type="radio" name="carroussel" id="radio2" class="hero__radio__input">
+
+        <!-- Carrousels : 1er, 2e, 3e -->
+        <div class="hero__carrousel" id="carrousel0" style="background-image: url(<?= $hero_background[0] ?>);"></div>
+        <div class="hero__carrousel" id="carrousel1" style="background-image: url(<?= $hero_background[1] ?>);"></div>
+        <div class="hero__carrousel" id="carrousel2" style="background-image: url(<?= $hero_background[2] ?>);"></div>
+
+        <!-- Labels visibles -->
+        <div class="hero__radio__labels">
+            <label for="radio0">1</label>
+            <label for="radio1">2</label>
+            <label for="radio2">3</label>
+        </div>
+        </div>
+
+        
         <div class="hero__contenu global">
             <h1 class="hero__titre"><?php bloginfo("name"); ?></h1>
             <p class="hero__description">
