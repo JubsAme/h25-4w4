@@ -6,12 +6,10 @@
   .hero__radio {
     position: relative;
 
-    // Inputs radio invisibles
     input.hero__radio__input {
       display: none;
     }
 
-    // Conteneur pour les labels des radios
     .hero__radio__labels {
       position: absolute;
       top: 700px;
@@ -19,10 +17,9 @@
       transform: translateX(-50%);
       display: flex;
       gap: 20px;
-      z-index: 100;
+      z-index: 10;
     }
 
-    // Labels visibles
     label {
       width: 20px;
       height: 20px;
@@ -36,7 +33,6 @@
       font-size: 14px;
     }
 
-    // Images carrousel en arrière-plan
     .hero__carrousel {
       position: absolute;
       top: 0;
@@ -51,10 +47,9 @@
       z-index: 0;
     }
 
-    // Affiche l'image correspondant au radio sélectionné
     #radio0:checked ~ #carrousel0,
     #radio1:checked ~ #carrousel1,
-    #radio2:checked ~ #carrousel2  {
+    #radio2:checked ~ #carrousel2 {
       opacity: 1;
       pointer-events: auto;
     }
@@ -62,12 +57,30 @@
 
   .hero__contenu {
     position: relative;
-    z-index: 10;
+    z-index: 5;
     padding-bottom: 60px;
+    color: rgb(255, 0, 255);
+    text-align: center;
+
+    &.animate-text {
+      animation: fadeInUp 1s ease forwards;
+    }
   }
 }
 
-/* Styles de la section d'inscription */
+// Animation de texte
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Inscription */
 .hero_inscription {
   position: absolute;
   bottom: 0;
@@ -77,7 +90,6 @@
   justify-content: center;
 }
 
-/* Tableau de la section d'inscription */
 .hero_tableau {
   width: 100%;
   border-collapse: collapse;
@@ -91,39 +103,6 @@
     white-space: nowrap;
   }
 
-  &_th {
-    width: auto;
-  }
-
-  &_td {
-    padding: 5px 8px;
-  }
-
-  &_th:nth-child(1),
-  &_td:nth-child(1) {
-    width: 15%;
-  }
-
-  &_th:nth-child(2),
-  &_td:nth-child(2) {
-    width: 15%;
-  }
-
-  &_th:nth-child(3),
-  &_td:nth-child(3) {
-    width: 10%;
-  }
-
-  &_th:nth-child(4),
-  &_td:nth-child(4) {
-    width: 25%;
-  }
-
-  &_th:nth-child(5),
-  &_td:nth-child(5) {
-    width: 15%;
-  }
-
   &_td button {
     display: inline-block;
     padding: 8px 15px;
@@ -131,17 +110,30 @@
     color: white;
     border: none;
     cursor: pointer;
-    text-align: center;
     width: 100%;
     margin-top: 10px;
+
+    &:hover {
+      background-color: #45a049;
+    }
   }
 
-  &_td button:hover {
-    background-color: #45a049;
-  }
+  &_th:nth-child(1),
+  &_td:nth-child(1) { width: 15%; }
+
+  &_th:nth-child(2),
+  &_td:nth-child(2) { width: 15%; }
+
+  &_th:nth-child(3),
+  &_td:nth-child(3) { width: 10%; }
+
+  &_th:nth-child(4),
+  &_td:nth-child(4) { width: 25%; }
+
+  &_th:nth-child(5),
+  &_td:nth-child(5) { width: 15%; }
 }
 
-/* Responsive pour petits écrans */
 @media screen and (max-width: 768px) {
   .hero_tableau {
     tr {
@@ -149,39 +141,29 @@
       margin-bottom: 10px;
     }
 
-    &_th,
-    &_td {
-      display: block;
-      width: 100%;
-      box-sizing: border-box;
-      text-align: right;
-    }
-
     &_th {
       display: none;
     }
 
     &_td {
+      display: block;
+      width: 100%;
       background-color: #f4f4f4;
       text-align: left;
-    }
 
-    &_td:before {
-      content: attr(data-label);
-      font-weight: bold;
-      text-transform: uppercase;
-      display: inline-block;
-      width: 40%;
-      margin-right: 10px;
-    }
+      &:before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+        display: inline-block;
+        width: 40%;
+        margin-right: 10px;
+      }
 
-    &_td button {
-      display: block;
-      margin-top: 10px;
-    }
-
-    &_td:nth-child(n) {
-      width: 100%;
+      button {
+        display: block;
+        margin-top: 10px;
+      }
     }
   }
 }

@@ -302,7 +302,7 @@ Les layouts
   transform: translateX(-50%);
   display: flex;
   gap: 20px;
-  z-index: 100;
+  z-index: 10;
 }
 .hero .hero__radio label {
   width: 20px;
@@ -337,11 +337,26 @@ Les layouts
 }
 .hero .hero__contenu {
   position: relative;
-  z-index: 10;
+  z-index: 5;
   padding-bottom: 60px;
+  color: rgb(255, 0, 255);
+  text-align: center;
+}
+.hero .hero__contenu.animate-text {
+  animation: fadeInUp 1s ease forwards;
 }
 
-/* Styles de la section d'inscription */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Inscription */
 .hero_inscription {
   position: absolute;
   bottom: 0;
@@ -351,7 +366,6 @@ Les layouts
   justify-content: center;
 }
 
-/* Tableau de la section d'inscription */
 .hero_tableau {
   width: 100%;
   border-collapse: collapse;
@@ -363,11 +377,18 @@ Les layouts
   text-align: left;
   white-space: nowrap;
 }
-.hero_tableau_th {
-  width: auto;
+.hero_tableau_td button {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
 }
-.hero_tableau_td {
-  padding: 5px 8px;
+.hero_tableau_td button:hover {
+  background-color: #45a049;
 }
 .hero_tableau_th:nth-child(1), .hero_tableau_td:nth-child(1) {
   width: 15%;
@@ -384,37 +405,18 @@ Les layouts
 .hero_tableau_th:nth-child(5), .hero_tableau_td:nth-child(5) {
   width: 15%;
 }
-.hero_tableau_td button {
-  display: inline-block;
-  padding: 8px 15px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  width: 100%;
-  margin-top: 10px;
-}
-.hero_tableau_td button:hover {
-  background-color: #45a049;
-}
 
-/* Responsive pour petits écrans */
 @media screen and (max-width: 768px) {
   .hero_tableau tr {
     display: block;
     margin-bottom: 10px;
   }
-  .hero_tableau_th, .hero_tableau_td {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: right;
-  }
   .hero_tableau_th {
     display: none;
   }
   .hero_tableau_td {
+    display: block;
+    width: 100%;
     background-color: #f4f4f4;
     text-align: left;
   }
@@ -429,9 +431,6 @@ Les layouts
   .hero_tableau_td button {
     display: block;
     margin-top: 10px;
-  }
-  .hero_tableau_td:nth-child(n) {
-    width: 100%;
   }
 }
 /*
