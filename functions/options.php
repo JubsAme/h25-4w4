@@ -57,4 +57,12 @@ function modifie_requete_principal( $query ) {
       }
      }
      add_action( 'pre_get_posts', 'modifie_requete_principal' );
+
+function categorie_par_destination($cat_a_retirer) {
+    if ($cat_a_retirer === 'populaire') {
+        return null;
+    }
+    // Sinon, retourne la catégorie normalement
+    return $cat_a_retirer;
+}
 ?>

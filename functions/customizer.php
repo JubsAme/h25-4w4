@@ -119,6 +119,16 @@ function theme_tp_customize_register($wp_customize) {
     'section' => 'footer_section',
     'type' => 'text',
   ));
+      /////////////////////////////////////////////////// Ajout de la donnée image en arriere plan.
+    $wp_customize->add_setting('footer_background', array(
+      'default' => '',
+      'sanitize_callback' => 'esc_url_raw',
+    ));
+    /////////////////////////////////////////////////// Ajout du contrôle de la donnée du background
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_background', array(
+      'label' => __('Footer Image', 'theme_31w'),
+      'section' => 'footer_section',
+    )));
   //////////////// Création de la section 404 dans le customizer.//////////////////////
   $wp_customize->add_section('404_section', array(
     'title' => __('Section 404', 'theme_tp'),

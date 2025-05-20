@@ -39,6 +39,14 @@ footer{
             border-left: solid black 2px;
             padding: 0 10px;
         }
+        &__image{
+            margin-top: 5rem;
+            height: 10vh;
+            width: 10vw;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
 
     }
 }

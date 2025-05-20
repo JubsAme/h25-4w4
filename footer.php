@@ -3,6 +3,8 @@
 <?php $footer_adresse = get_theme_mod('footer_adresse', '');?>
 <?php $footer_telephone = get_theme_mod('footer_telephone', '');?>
 <?php $footer_courriel = get_theme_mod('footer_courriel', '');?>
+<?php $footer_background = get_theme_mod('footer_background', '');?>
+
 
 <?php
 genere_vague();
@@ -44,7 +46,10 @@ genere_vague();
             <div class="piedpage__s1__description">
                 <h2>Notre mission</h2>
             <?php echo $footer_mission ?>
+            <section class="piedpage__s1__image" style="background-image: url(<?php echo $footer_background?>)">
+            </section>
             </div>
+            
         </section>
     </div>
 </footer>
