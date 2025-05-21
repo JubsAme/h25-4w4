@@ -7,6 +7,7 @@ get_header();
 <main class="site__main">
     <section class="recherche__section">
         <?php if (have_posts()) : ?>
+             <p><strong><?php echo count($wp_query->posts); ?></strong> article(s)</p>
             <?php while (have_posts()) : the_post(); ?>
                 <article>
                     <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>

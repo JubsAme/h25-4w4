@@ -74,32 +74,63 @@ Les composants
   padding: 4px;
 }
 
-/*Styles pour le searchform.*/
-.recherche {
-  display: flex;
-  height: 1.6rem;
-  width: 14rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+.recherche__section {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-.recherche__input {
+.recherche__section p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.2rem;
+}
+.recherche__section article {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+.recherche__section article h5 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.2rem;
+}
+.recherche__section article h5 a {
+  color: #007acc;
+  text-decoration: none;
+}
+.recherche__section article h5 a:hover {
+  text-decoration: underline;
+}
+.recherche__section article p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+.recherche__section hr {
   border: none;
-  outline: none;
-  background-color: rgba(0, 0, 0, 0.01);
-  flex: 1 0 auto;
-  padding: 3px;
+  border-bottom: 1px solid #eee;
+  margin: 0.8rem 0;
 }
-.recherche__input:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-.recherche__input::placeholder {
-  color: rgba(0, 0, 0, 0.2);
+.recherche__section > p {
   font-style: italic;
-}
-.recherche__img {
-  flex: 0 0 20px;
-  padding: 3px;
+  color: #999;
+  text-align: center;
+  margin-top: 3rem;
 }
 
+@media (max-width: 480px) {
+  .recherche__section {
+    padding: 0.8rem;
+  }
+  .recherche__section article h5 {
+    font-size: 1rem;
+  }
+  .recherche__section article p {
+    font-size: 0.9rem;
+  }
+}
 /*Styles pour les cartes*/
 .carte {
   display: flex;
@@ -569,80 +600,76 @@ footer {
 .section_404 {
   height: 100vh;
   width: 100vw;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background: center/cover no-repeat;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
+  color: inherit;
+  text-align: center;
+  padding: 2rem;
+}
+.section_404__titre, .section_404__texte {
+  max-width: 80%;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(2px);
 }
 .section_404__titre {
-  display: inline-block;
-  height: fit-content;
-  width: fit-content;
-  max-width: 50%;
-  background-color: rgba(255, 255, 255, 0.3);
-  padding: 1rem;
-  font-size: 4rem;
-  text-align: center;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
 }
 .section_404__texte {
-  display: inline-block;
-  height: fit-content;
-  width: fit-content;
-  max-width: 50%;
-  background-color: rgba(255, 255, 255, 0.3);
-  padding: 1rem;
-  text-align: center;
+  font-size: 1.2rem;
 }
 .section_404__boutonAccueil {
-  height: fit-content;
-  width: fit-content;
-  background-color: yellow;
-  color: lightblue;
-  font-size: 1.5rem;
-  padding: 1rem;
+  display: inline-block;
+  background-color: #ffd700;
+  color: #003366;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
   text-decoration: none;
   border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+.section_404__boutonAccueil:hover {
+  background-color: #ffcc00;
 }
 .section_404__nav {
-  max-width: 50%;
+  max-width: 80%;
+  width: 100%;
+}
+.section_404__nav .menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
 }
 .section_404__nav .menu .menu-item {
-  height: fit-content;
-  width: fit-content;
   background-color: rgba(30, 60, 120, 0.5);
   border-radius: 0.5rem;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 .section_404__nav .menu .menu-item a {
-  color: blue;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.section_404__nav .menu .menu-item a:hover {
+  text-decoration: underline;
 }
 
-@media screen and (max-width: 1100px) {
-  .section_404__titre {
-    max-width: 70%;
-  }
-  .section_404__texte {
-    max-width: 70%;
-  }
-}
 @media screen and (max-width: 800px) {
-  .section_404__titre {
-    font-size: 2rem;
-    max-width: 80%;
-  }
-  .section_404__texte {
-    max-width: 80%;
-  }
-  .section_404__boutonAccueil {
-    font-weight: bold;
+  .section_404__titre, .section_404__texte {
+    max-width: 95%;
   }
   .section_404__nav .menu {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
 }/*# sourceMappingURL=style.css.map */

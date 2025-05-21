@@ -21,6 +21,9 @@
                     'container' => 'nav',
                     'container_class' => 'section_404__nav'
                 )); ?>
+                <div class="section_404__search">
+                  <?php get_search_form(); ?>
+                </div>
   </section>
 <?php get_footer(); ?>
    

@@ -1,32 +1,69 @@
-/*Styles pour le searchform.*/
-.recherche{
-    display:flex;
-    height: 1.6rem;
-    width : 14rem;
-    border: 1px solid  rgba(0, 0, 0, 0.1);
+.recherche__section {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 
-// le & prend la valeur du sélecteur parent 
-    &__input{
-        border : none;
-        outline: none;
-        background-color: rgba(0,0,0, .01);
-        flex : 1 0 auto;
-        padding : 3px;
-        &:hover{
-            background-color: rgba(0,0,0, .05); 
+  p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1.2rem;
+  }
+
+  article {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+
+    h5 {
+      margin: 0 0 0.3rem 0;
+      font-size: 1.2rem;
+
+      a {
+        color: #007acc;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
         }
-        &::placeholder{
-            color: rgba(0,0,0, .2);
-            font-style : italic;
-        }
-
+      }
     }
-    
-    &__img{
-        flex: 0 0 20px; 
-        padding : 3px;
 
-
-
+    p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.4;
     }
+  }
+
+  hr {
+    border: none;
+    border-bottom: 1px solid #eee;
+    margin: 0.8rem 0;
+  }
+
+  // Style pour message "Aucun résultat"
+  > p {
+    font-style: italic;
+    color: #999;
+    text-align: center;
+    margin-top: 3rem;
+  }
+}
+
+// Responsive : pour écrans petits
+@media (max-width: 480px) {
+  .recherche__section {
+    padding: 0.8rem;
+
+    article h5 {
+      font-size: 1rem;
+    }
+
+    article p {
+      font-size: 0.9rem;
+    }
+  }
 }
