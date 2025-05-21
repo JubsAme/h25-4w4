@@ -47,7 +47,7 @@ $hero_background[$k] = get_theme_mod('hero_background_'.$k, '');
             <p class ="hero_telephone">Numéro de téléphone: <?php echo $hero_telephone; ?></p>
 
             <div class="hero__icone">
-            <?php get_template_part( 'gabarits/icones' ); ?>
+            <?php afficher_icones_reseaux_svg(); ?>
             </div>
             <div class="hero_inscription">
                 <table class="hero_tableau">

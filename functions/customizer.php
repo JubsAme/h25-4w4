@@ -217,6 +217,44 @@ function theme_tp_customize_register($wp_customize) {
     'label' => __('Image en arrière plan ' . ($k+1) , 'theme_tp'),
     'section' => 'hero_section',
   )));
+  //////////////////////////////// création de la section réseaux.
+  $wp_customize->add_section('section_reseaux', array(
+    'title' => __('Réseaux Sociaux'),
+    'priority' => 30,
+));
+$wp_customize->add_section('section_reseaux', array(
+    'title'    => __('Réseaux Sociaux', 'theme_tp'),
+    'priority' => 31,
+));
+
+// Liste des réseaux sociaux à personnaliser
+$socials = ['facebook', 'twitter', 'instagram', 'github'];
+
+foreach ($socials as $reseau) {
+    // Image SVG (ou autre image)
+    $wp_customize->add_setting("social_icon_$reseau", array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "social_icon_$reseau", array(
+        'label'   => __('Icône ' . ucfirst($reseau), 'theme_tp'),
+        'section' => 'section_reseaux',
+    )));
+
+    // Lien vers le réseau
+    $wp_customize->add_setting("social_link_$reseau", array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control("social_link_$reseau", array(
+        'label'   => __('Lien ' . ucfirst($reseau), 'theme_tp'),
+        'section' => 'section_reseaux',
+        'type'    => 'url',
+    ));
+}
+
   }
   }
   add_action('customize_register', 'theme_tp_customize_register');

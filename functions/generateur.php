@@ -33,3 +33,21 @@
  function genere_vague(){?>
    <svg style="top: 20px" class="vague" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,64L120,101.3C240,139,480,213,720,202.7C960,192,1200,96,1320,48L1440,0L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
  <?php }
+ //Fonction pour afficher les réseaux sociaux avec leur lien
+
+ function afficher_icones_reseaux_svg() {
+    $socials = ['facebook', 'twitter', 'instagram', 'github'];
+
+    echo '<div class="reseaux-sociaux-svg">';
+    foreach ($socials as $reseau) {
+        $icon = get_theme_mod("social_icon_$reseau");
+        $link = get_theme_mod("social_link_$reseau");
+
+        if ($icon && $link) {
+            echo '<a href="' . esc_url($link) . '" target="_blank" rel="noopener noreferrer">';
+            echo '<img src="' . esc_url($icon) . '" alt="' . esc_attr($reseau) . '" style="width:24px; height:24px;">';
+            echo '</a>';
+        }
+    }
+    echo '</div>';
+}
