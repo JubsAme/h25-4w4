@@ -12,8 +12,7 @@
             ?>  
             <h2><?php the_title(); ?></h2>
             <div><?php the_content(); ?>
-                <?php the_category(); ?>
-                <?php $tableau = get_the_category(); ?>
+                <?php echo categorie_par_destination(); ?>
                 <p>Température Maximum: <?php the_field("temperature_maximum"); ?>°C</p>
                 <p>Température Minimum: <?php the_field("temperature_minimum"); ?>°C</p>
                 <p>Température Moyenne: <?php the_field("temperature_moyenne"); ?>°C</p>

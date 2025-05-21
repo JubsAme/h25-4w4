@@ -58,11 +58,30 @@ function modifie_requete_principal( $query ) {
      }
      add_action( 'pre_get_posts', 'modifie_requete_principal' );
 
-function categorie_par_destination($cat_a_retirer) {
-    if ($cat_a_retirer === 'populaire') {
-        return null;
+function categorie_par_destination($cat_a_retirer = null) {
+    $categories = get_the_category(); // Récupère les catégories de l'article courant
+    $output = '';
+
+    if (!empty($categories)) {
+        foreach ($categories as $cat) {
+            // Ignore la catégorie à retirer si précisée
+            if ($cat_a_retirer && $cat->slug === $cat_a_retirer) {
+                continue;
+            }
+            // Crée un lien vers la page catégorie
+            $link = get_category_link($cat->term_id);
+            $name = esc_html($cat->name);
+
+            $output .= '<a href="' . esc_url($link) . '" class="btn-categorie">' . $name . '</a> ';
+        }
     }
-    // Sinon, retourne la catégorie normalement
-    return $cat_a_retirer;
+
+    // Ne rien retourner si $output est vide
+    if (empty($output)) {
+        return '';
+    }
+
+    return $output;
 }
+
 ?>

@@ -11,8 +11,7 @@
   </div>
   <div class="carte__contenu">
     <p class="carte__description"><?php echo wp_trim_words(get_the_content(),10, " ... " ); ?></p>
-
-    <?php afficher_bouton_categorie_par_destination(); ?>
+    <?php echo categorie_par_destination('populaire'); ?> 
     <p>Température Maximum: <?php the_field("temperature_maximum"); ?>°C</p>
     <p>Température Minimum: <?php the_field("temperature_minimum"); ?>°C</p>
     <p>Température Moyenne: <?php the_field("temperature_moyenne"); ?>°C</p>

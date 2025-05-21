@@ -167,17 +167,24 @@ Les composants
 }
 .btn-categorie {
   display: inline-block;
-  padding: 10px 16px;
-  background-color: #0073aa;
+  padding: 0.6rem 1.2rem;
+  margin: 0.4rem;
+  background-color: #6a1b9a;
   color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
   text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
 }
-
 .btn-categorie:hover {
-  background-color: #005177;
+  background-color: #8e24aa;
+  transform: scale(1.05);
+}
+.btn-categorie:active {
+  transform: scale(0.98);
 }
 
 /**
@@ -209,6 +216,58 @@ bouton-categorie.scss ------------------------------ .categorie__ul
 
 .vague {
   position: relative;
+}
+
+.destination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.destination__list {
+  width: 90vw;
+  height: fit-content;
+}
+
+.categorie__ul {
+  width: 100vw;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+}
+.categorie__ul__li {
+  cursor: pointer;
+  border: 2px solid black;
+}
+.categorie__ul__li:hover {
+  text-decoration: underline;
+  color: #2c3e50;
+}
+
+.btn-lire-plus {
+  background-color: rgb(255, 0, 255);
+  border: 2px solid black;
+  cursor: pointer;
+  padding: 2px;
+  text-decoration: none;
+}
+
+.titre_destination {
+  background-color: #00ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.destination__list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  padding: 0 1rem;
+}
+
+.destination__list.open {
+  max-height: 1000px;
 }
 
 /* /////////////////////////////////

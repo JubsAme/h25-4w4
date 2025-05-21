@@ -7,7 +7,6 @@
                 the_content() ;
             } else {    ?>
                 <?php get_template_part( 'gabarits/carte' ); ?>
-                <?php afficher_bouton_categorie_par_destination(); ?>
             <?php } ?>
             <?php endwhile; endif; ?>
         </div>

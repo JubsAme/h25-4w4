@@ -81,16 +81,26 @@
     }
 }
 .btn-categorie {
-    display: inline-block;
-    padding: 10px 16px;
-    background-color: #0073aa;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  margin: 0.4rem;
+  background-color: #6a1b9a; // violet profond
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #8e24aa;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
 }
 
-.btn-categorie:hover {
-    background-color: #005177;
-}
