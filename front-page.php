@@ -22,10 +22,9 @@
 <section class="destination">
     <?php categories_liste("destination") ?> <!-- Affiche la liste des catégories "destination" via une fonction personnalisée -->
     <h2 class="destination__titre">Articles de la catégorie</h2>
-    <div class="destination__list"></div> <!-- Conteneur vide probablement rempli via JS ou autre -->
+    <div class="destination__list"></div> 
 </section>
 
-<!-- Pied de page vide, peut-être pour un futur contenu -->
 <footer></footer>
 
 <?php get_footer(); ?>
