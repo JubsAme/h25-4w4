@@ -1,52 +1,135 @@
-/*
-  --------------------------------- Layout du pied de page
-*/
-
-footer{
+footer {
   background-color: #A020F0;
-  color : #ffffff;
+  color: #ffffff;
 }
 
-.piedpage{
+.piedpage {
+  display: flex;
+  flex-direction: column;
+
+  &__s1 {
     display: flex;
-    flex-direction: column;
-    &__s1{
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 0 2rem;
+
+    &__externe {
+      flex: 0 0 20%;
+
+      .menu {
         display: flex;
-        flex-wrap: wrap;
-        gap: 3rem;
-        &__externe {
-            flex : 0 0 20%;
-            & .menu { //ul
-                display : flex;
-                flex-direction: column;
-                & a{
-                    color: #ffffff;
-                }
-            }
+        flex-direction: column;
 
+        a {
+          color: #ffffff;
+          text-decoration: none;
+          padding: 0.25rem 0;
+          transition: color 0.3s ease;
 
+          &:hover {
+            color: #ffeb3b; // un jaune doux au hover
+          }
         }
-        &__adresse{
-            flex : 0 0 40%;
-            border-left: solid black 2px;
-            padding: 0 10px;
-
-            &__coord{}
-            &__recherche{}
-        }
-        &__description{
-            flex:0 0 20%;
-            border-left: solid black 2px;
-            padding: 0 10px;
-        }
-        &__image{
-            margin-top: 5rem;
-            height: 10vh;
-            width: 10vw;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
-
+      }
     }
+
+    &__adresse {
+      flex: 0 0 40%;
+      border-left: 2px solid rgba(0, 0, 0, 0.5);
+      padding: 0 20px;
+      text-align: center; // CENTRAGE DES TEXTES
+
+      &__coord {
+        margin-bottom: 1.5rem;
+      }
+
+      &__recherche {
+        margin-top: 1rem;
+
+        input[type="search"],
+        input[type="text"] {
+          width: 100%;
+          padding: 0.5rem 1rem;
+          border-radius: 25px;
+          border: none;
+          outline: none;
+          font-size: 1rem;
+          transition: box-shadow 0.3s ease;
+          box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+          background-color: rgba(255, 255, 255, 0.15);
+          color: #fff;
+
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+          }
+
+          &:hover,
+          &:focus {
+            box-shadow: 0 0 8px #ffeb3b;
+            background-color: rgba(255, 255, 255, 0.3);
+          }
+        }
+
+        button {
+          margin-top: 0.5rem;
+          padding: 0.5rem 1.5rem;
+          border: none;
+          border-radius: 25px;
+          background-color: #ffeb3b;
+          color: #000;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #fbc02d;
+          }
+        }
+      }
+    }
+
+    &__description {
+      flex: 0 0 20%;
+      border-left: 2px solid rgba(0, 0, 0, 0.5);
+      padding: 0 20px;
+      text-align: center; // CENTRAGE DES TEXTES
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__image {
+      margin-top: 5rem;
+      height: 15vh; // un peu plus haute pour meilleure visibilité
+      width: 15vw;
+      background-repeat: no-repeat;
+      background-size: contain; // mieux que cover pour ne pas couper l'image
+      background-position: center;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      align-self: center; // centrer l’image dans la colonne
+    }
+  }
+}
+
+// Responsive
+@media screen and (max-width: 800px) {
+  .piedpage__s1 {
+    flex-direction: column;
+
+    &__externe,
+    &__adresse,
+    &__description {
+      flex: 1 1 100%;
+      border-left: none;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    &__image {
+      width: 50vw;
+      height: 10vh;
+    }
+  }
 }

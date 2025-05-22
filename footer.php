@@ -27,10 +27,8 @@ genere_vague();
                 <div class="piedpage__s1__adresse__coord">
                     <h2>Trouvez nos informations et rejoignez-nous sur nos réseaux sociaux!</h2>
             <!---Ici mettre des variables controlables avec les Customizer-->
-                    <img src="https://s2.svgbox.net/social.svg?ic=facebook&color=<?php echo $footer_couleurIcones ?>" width="20" height="20">
-                    <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=<?php echo $footer_couleurIcones ?>" width="20" height="20">
-                    <img src="https://s2.svgbox.net/social.svg?ic=stackoverflow&color=<?php echo $footer_couleurIcones ?>" width="20" height="20">
-                    <img src="https://s2.svgbox.net/social.svg?ic=snapchat&color=<?php echo $footer_couleurIcones ?>" width="20" height="20">
+                    <?php afficher_icones_reseaux_svg();?>
+                    
                 </div>
                 <div class="piedpage__s1__adresse__recherche">
                     <h2>Nous Contacter</h2>

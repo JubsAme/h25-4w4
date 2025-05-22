@@ -1,7 +1,9 @@
 /*Layout global*/
 .global{
     max-width: 1100px;
-    padding: 10vh 5vw;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    padding-left: 13vw;
     align-items: center;
     
 }
@@ -9,4 +11,10 @@
 .populaire .global {
     display: flex;
     flex-wrap: wrap;
+}
+@media screen and (max-width: 800px){
+    .global{
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
 }

@@ -82,16 +82,17 @@
 
 /* Inscription */
 .hero_inscription {
-  position: absolute;
-  bottom: 0;
   display: flex;
-  width: 100vw;
+  flex-wrap: wrap;
+  width: fit-content;
   max-width: 100vw;
   justify-content: center;
+  margin: 2rem auto;
+  position: relative; // plus de absolute ici
 }
 
 .hero_tableau {
-  width: 100%;
+  width: fit-content;
   border-collapse: collapse;
 
   &_th,
@@ -105,12 +106,11 @@
 
   &_td button {
     display: inline-block;
-    padding: 8px 15px;
     background-color: #4caf50;
     color: white;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: fit-content;
     margin-top: 10px;
 
     &:hover {
@@ -134,11 +134,25 @@
   &_td:nth-child(5) { width: 15%; }
 }
 
+// Responsive
 @media screen and (max-width: 768px) {
+  .hero_inscription {
+    margin-top: 2rem;
+  }
+
   .hero_tableau {
+    width: 100%; // prend toute la largeur disponible
+    border: none; // on enlève les bordures de table classiques
+    background: transparent;
+    padding-top: 0;
+
     tr {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 1.5rem;
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     &_th {
@@ -146,24 +160,59 @@
     }
 
     &_td {
-      display: block;
-      width: 100%;
-      background-color: #f4f4f4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border: none;
+      background-color: transparent;
       text-align: left;
+      white-space: normal;
 
       &:before {
         content: attr(data-label);
-        font-weight: bold;
+        font-weight: 700;
         text-transform: uppercase;
-        display: inline-block;
-        width: 40%;
-        margin-right: 10px;
+        width: 35%;
+        color: #6a0dad; // violet doux pour le label
+        flex-shrink: 0;
+      }
+
+      input[type="text"] {
+        flex-grow: 1;
+        margin-left: 10vw;
+        border: 1.5px solid #a020f0;
+        border-radius: 6px;
+        font-size: 1rem;
+        color: #333;
+        background: #fff;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: #6a0dad;
+          box-shadow: 0 0 6px rgba(106, 13, 173, 0.5);
+        }
       }
 
       button {
-        display: block;
+        flex-grow: 0;
         margin-top: 10px;
+        padding: 10px 20px;
+        font-weight: 700;
+        font-size: 1rem;
+        background-color: #6a0dad;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #4b068f;
+        }
       }
     }
   }
 }
+
