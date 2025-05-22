@@ -1,29 +1,32 @@
-/**
-bouton-categorie.scss ------------------------------ .categorie__ul
-*/
+/* bouton-categorie.scss ------------------------------ .categorie__ul */
 
-
-.categorie__ul{
-  display : flex;
+.categorie__ul {
+  display: flex;
   gap: 5px;
   list-style-type: none;
-&__li{
-  padding: 3px;
-  border: 1px solid #aaa;
-  background-color: rgb(255, 0, 255);
-}
-.btn-categorie {
-    display: inline-block;
-    padding: 10px 16px;
-    background-color: #0073aa;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
+  padding: 0;  /* important pour enlever le padding par défaut */
 
-.btn-categorie:hover {
-    background-color: #005177;
-}
+  &__li {
+    padding: 3px;
+    border: 1px solid #aaa;
+    background-color: rgb(255, 0, 255);
+    cursor: pointer;
+    border-radius: 4px;
+
+    /* pour appliquer .btn-categorie aux liens dans les li */
+    a.btn-categorie {
+      display: inline-block;
+      padding: 10px 16px;
+      background-color: #0073aa;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #005177;
+      }
+    }
+  }
 }

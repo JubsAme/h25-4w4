@@ -57,11 +57,13 @@ p {
 /* /////////////////////////////////
 Les composants
 //////////////////////////////////// */
-/*Styles pour le menu*/
+/* Styles globaux pour le menu de navigation */
 .menu {
   display: flex;
   gap: 10px;
   list-style: none;
+  /* Sur petits écrans, passage en menu vertical plein largeur */
+  /* Styles pour chaque élément du menu */
 }
 @media screen and (max-width: 800px) {
   .menu {
@@ -74,6 +76,7 @@ Les composants
   padding: 4px;
 }
 
+/* Section recherche avec largeur max, centrage et style léger */
 .recherche__section {
   max-width: 700px;
   margin: 2rem auto;
@@ -81,6 +84,10 @@ Les composants
   background-color: #fafafa;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  /* Paragraphe général avec taille et couleur de texte */
+  /* Article résultat individuel avec marge et bordure séparatrice */
+  /* Ligne horizontale légère comme séparation */
+  /* Style spécifique au message "Aucun résultat" */
 }
 .recherche__section p {
   font-size: 1rem;
@@ -91,10 +98,13 @@ Les composants
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #ddd;
+  /* Titre de résultat avec marge et taille */
+  /* Description du résultat avec taille de texte et interlignage */
 }
 .recherche__section article h5 {
   margin: 0 0 0.3rem 0;
   font-size: 1.2rem;
+  /* Lien dans le titre avec couleur et effet au survol */
 }
 .recherche__section article h5 a {
   color: #007acc;
@@ -120,6 +130,7 @@ Les composants
   margin-top: 3rem;
 }
 
+/* Adaptation responsive pour petits écrans */
 @media (max-width: 480px) {
   .recherche__section {
     padding: 0.8rem;
@@ -131,11 +142,11 @@ Les composants
     font-size: 0.9rem;
   }
 }
-/*Styles pour les cartes*/
+/* Styles pour les cartes */
 .carte {
-  display: flex;
+  display: flex; /* Utilise Flexbox pour organiser les éléments en colonne */
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; /* Espace entre le haut et le bas */
   margin: 10px 10px;
   padding: 10px;
   font-family: "Roboto Slab", sans-serif;
@@ -143,50 +154,50 @@ Les composants
   width: 320px;
 }
 .carte--grande {
-  flex: 1 1 250px;
-  transition: transform 0.3s ease;
+  flex: 1 1 250px; /* Permet à la carte de prendre de l'espace en grand format */
+  transition: transform 0.3s ease; /* Animation fluide lors du hover */
 }
 .carte--grande:hover {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Agrandissement de la carte au survol */
 }
 .carte__image {
   position: absolute; /* Placer l'image en arrière-plan */
-  background-size: cover; /* Couvre toute la zone */
-  background-position: center; /* Centrer l'image */
-  background-repeat: no-repeat;
-  z-index: -1; /* L'image est derrière le contenu */
+  background-size: cover; /* Couvre toute la zone disponible */
+  background-position: center; /* Centre l'image dans son conteneur */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  z-index: -1; /* Place l'image derrière le contenu */
   height: 400px;
   width: 340px;
   overflow: hidden;
 }
 .carte__contenu {
-  position: relative; /* Le contenu doit être au-dessus de l'image */
-  background-color: rgba(255, 255, 255, 0.5); /* Fond semi-transparent pour la lisibilité du texte */
-  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+  position: relative; /* Permet de superposer le contenu sur l’image */
+  background-color: rgba(255, 255, 255, 0.5); /* Fond semi-transparent pour la lisibilité */
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3); /* Ombre portée */
   padding: 10px;
-  z-index: 1; /* Assurer que le contenu soit au-dessus de l'image */
+  z-index: 1; /* Devant l’image */
   height: 400px;
   width: 320px;
 }
 .carte__contenu .Prix {
   font-size: large;
-  font-weight: bold;
+  font-weight: bold; /* Met en évidence le prix */
 }
 .carte .carte__conteneurTitre {
-  height: fit-content;
-  width: 340px;
-  background-color: rgba(160, 32, 240, 0.5);
+  height: fit-content; /* Hauteur adaptée au contenu */
+  width: 340px; /* Attention : différent de la largeur de .carte, peut causer un décalage */
+  background-color: rgba(160, 32, 240, 0.5); /* Violet transparent */
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
   text-align: center;
 }
 .carte__description {
-  font-weight: bold;
+  font-weight: bold; /* Texte en gras */
 }
 .carte__bouton {
-  background-color: rgb(160, 32, 240);
+  background-color: rgb(160, 32, 240); /* Violet vif */
   color: black;
   font-weight: bold;
   border: solid black 2px;
@@ -194,8 +205,10 @@ Les composants
   padding: 0rem 1rem;
 }
 .carte__bouton a {
-  text-decoration: none;
+  text-decoration: none; /* Supprime le soulignement du lien */
 }
+
+/* Style pour les boutons de catégorie */
 .btn-categorie {
   display: inline-block;
   padding: 0.6rem 1.2rem;
@@ -212,26 +225,28 @@ Les composants
 }
 .btn-categorie:hover {
   background-color: #8e24aa;
-  transform: scale(1.05);
+  transform: scale(1.05); /* Légère augmentation au survol */
 }
 .btn-categorie:active {
-  transform: scale(0.98);
+  transform: scale(0.98); /* Légère réduction lors du clic */
 }
 
-/**
-bouton-categorie.scss ------------------------------ .categorie__ul
-*/
+/* bouton-categorie.scss ------------------------------ .categorie__ul */
 .categorie__ul {
   display: flex;
   gap: 5px;
   list-style-type: none;
+  padding: 0; /* important pour enlever le padding par défaut */
 }
 .categorie__ul__li {
   padding: 3px;
   border: 1px solid #aaa;
   background-color: rgb(255, 0, 255);
+  cursor: pointer;
+  border-radius: 4px;
+  /* pour appliquer .btn-categorie aux liens dans les li */
 }
-.categorie__ul .btn-categorie {
+.categorie__ul__li a.btn-categorie {
   display: inline-block;
   padding: 10px 16px;
   background-color: #0073aa;
@@ -241,7 +256,7 @@ bouton-categorie.scss ------------------------------ .categorie__ul
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
-.categorie__ul .btn-categorie:hover {
+.categorie__ul__li a.btn-categorie:hover {
   background-color: #005177;
 }
 
@@ -249,32 +264,38 @@ bouton-categorie.scss ------------------------------ .categorie__ul
   position: relative;
 }
 
+/* Conteneur principal pour la section destination centré verticalement et horizontalement */
 .destination {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* Liste des destinations avec largeur relative et hauteur automatique */
 }
 .destination__list {
   width: 90vw;
   height: fit-content;
 }
 
+/* Liste des catégories pleine largeur avec centrage des éléments */
 .categorie__ul {
   width: 100vw;
   height: fit-content;
   align-items: center;
   justify-content: center;
+  /* Élément de liste catégorie avec curseur pointer et bordure */
 }
 .categorie__ul__li {
   cursor: pointer;
   border: 2px solid black;
+  /* Style au survol : souligné et couleur foncée */
 }
 .categorie__ul__li:hover {
   text-decoration: underline;
   color: #2c3e50;
 }
 
+/* Bouton "lire plus" avec fond magenta, bordure noire et style clic */
 .btn-lire-plus {
   background-color: rgb(255, 0, 255);
   border: 2px solid black;
@@ -283,6 +304,7 @@ bouton-categorie.scss ------------------------------ .categorie__ul
   text-decoration: none;
 }
 
+/* Titre de la section destination centré avec fond cyan */
 .titre_destination {
   background-color: #00ffff;
   display: flex;
@@ -290,6 +312,7 @@ bouton-categorie.scss ------------------------------ .categorie__ul
   justify-content: center;
 }
 
+/* Liste des destinations masquée par défaut avec transition de la hauteur */
 .destination__list {
   max-height: 0;
   overflow: hidden;
@@ -297,6 +320,7 @@ bouton-categorie.scss ------------------------------ .categorie__ul
   padding: 0 1rem;
 }
 
+/* Classe pour ouvrir la liste avec hauteur maximale */
 .destination__list.open {
   max-height: 1000px;
 }
@@ -304,26 +328,29 @@ bouton-categorie.scss ------------------------------ .categorie__ul
 /* /////////////////////////////////
 Les layouts
 //////////////////////////////////// */
-/*Layout global*/
+/* Layout global : conteneur principal avec largeur max et padding vertical/horizontal */
 .global {
-  max-width: 1100px;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-  padding-left: 13vw;
-  align-items: center;
+  max-width: 1100px; /* largeur maximale du conteneur */
+  padding-top: 10vh; /* marge interne haute relative à la hauteur de la fenêtre */
+  padding-bottom: 10vh; /* marge interne basse */
+  padding-left: 13vw; /* marge interne gauche relative à la largeur de la fenêtre */
+  align-items: center; /* alignement vertical au centre (à utiliser si flex container) */
 }
 
+/* Pour la section populaire, la classe globale devient un flex container qui wrappe ses enfants */
 .populaire .global {
-  display: flex;
-  flex-wrap: wrap;
+  display: flex; /* active le flexbox */
+  flex-wrap: wrap; /* autorise le retour à la ligne des éléments enfants */
 }
 
+/* Adaptation responsive pour petits écrans */
 @media screen and (max-width: 800px) {
   .global {
-    padding-left: 2vw;
-    padding-right: 2vw;
+    padding-left: 2vw; /* réduction du padding gauche */
+    padding-right: 2vw; /* ajout padding droite pour équilibrer */
   }
 }
+/* Conteneur principal de l'entête en flex avec espace entre éléments et alignement vertical centré */
 .entete {
   display: flex;
   justify-content: space-between;
@@ -333,12 +360,21 @@ Les layouts
   padding: 0 20px;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Navigation principale en ligne avec espacement */
+  /* Icone burger (menu hamburger) caché par défaut */
+  /* Case à cocher invisible pour toggle du menu */
+  /* Affiche la navigation quand le toggle est coché */
+  /* Animation de la première barre du burger en croix */
+  /* Masque la barre centrale du burger */
+  /* Animation de la troisième barre du burger en croix */
 }
 .entete__navigation {
   display: flex;
   align-items: center;
   flex-direction: row;
   gap: 30px;
+  /* Styles des liens de navigation */
+  /* Navigation cachée et stylisée en menu vertical sur petit écran */
 }
 .entete__navigation a {
   color: #333;
@@ -348,9 +384,10 @@ Les layouts
   padding: 10px 5px;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  /* Effets au survol et au focus */
 }
 .entete__navigation a:hover, .entete__navigation a:focus {
-  background-color: #a020f0;
+  background-color: #a020f0; /* violet */
   color: white;
   outline: none;
 }
@@ -360,7 +397,7 @@ Les layouts
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0s 0.5s;
     position: absolute;
-    top: 100%;
+    top: 100%; /* juste en dessous de l'entête */
     left: 0;
     width: 100vw;
     background-color: rgba(255, 255, 255, 0.95);
@@ -381,6 +418,8 @@ Les layouts
   justify-content: space-between;
   padding-right: 40px;
   z-index: 1000;
+  /* Barres du burger */
+  /* Affiche le burger sur petit écran */
 }
 .entete .burger-icon .burger-bar {
   width: 100%;
@@ -419,110 +458,112 @@ Les layouts
 }
 
 .hero {
-  position: relative;
-  min-height: 100vh;
-  background-repeat: no-repeat;
+  position: relative; /* Conteneur principal en position relative */
+  min-height: 100vh; /* Hauteur minimale de 100% de la hauteur de la fenêtre */
+  background-repeat: no-repeat; /* Empêche la répétition de l’arrière-plan */
 }
 .hero .hero__radio {
-  position: relative;
+  position: relative; /* Conteneur relatif pour éléments enfants */
+  /* Affiche la diapo active selon radio sélectionné */
 }
 .hero .hero__radio input.hero__radio__input {
-  display: none;
+  display: none; /* Cache les inputs radio */
 }
 .hero .hero__radio .hero__radio__labels {
-  position: absolute;
-  top: 700px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 20px;
-  z-index: 10;
+  position: absolute; /* Positionne les labels au-dessus */
+  top: 700px; /* Décalage vertical */
+  left: 50%; /* Centrage horizontal */
+  transform: translateX(-50%); /* Ajustement pour centrage exact */
+  display: flex; /* Disposition en ligne */
+  gap: 20px; /* Espacement entre les boutons */
+  z-index: 10; /* Superposition au-dessus des autres éléments */
 }
 .hero .hero__radio label {
-  width: 20px;
+  width: 20px; /* Taille carrée */
   height: 20px;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-  text-align: center;
-  line-height: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
-  font-size: 14px;
+  background: rgba(255, 255, 255, 0.7); /* Fond semi-transparent */
+  border-radius: 50%; /* Forme ronde */
+  text-align: center; /* Centrer texte */
+  line-height: 20px; /* Alignement vertical */
+  font-weight: bold; /* Texte en gras */
+  cursor: pointer; /* Curseur pointeur */
+  user-select: none; /* Empêche la sélection */
+  font-size: 14px; /* Taille de police */
 }
 .hero .hero__radio .hero__carrousel {
-  position: absolute;
+  position: absolute; /* Positionné par-dessus le conteneur */
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease-in-out;
-  z-index: 0;
+  width: 100vw; /* Largeur pleine fenêtre */
+  height: 100vh; /* Hauteur pleine fenêtre */
+  background-size: cover; /* Image couvre tout */
+  background-position: center; /* Centrage image */
+  opacity: 0; /* Initialement invisible */
+  pointer-events: none; /* Pas d’interactions */
+  transition: opacity 0.5s ease-in-out; /* Transition douce */
+  z-index: 0; /* Derrière les autres éléments */
 }
 .hero .hero__radio #radio0:checked ~ #carrousel0,
 .hero .hero__radio #radio1:checked ~ #carrousel1,
 .hero .hero__radio #radio2:checked ~ #carrousel2 {
   opacity: 1;
-  pointer-events: auto;
+  pointer-events: auto; /* Rendre interactif */
 }
 .hero .hero__contenu {
-  position: relative;
-  z-index: 5;
-  padding-bottom: 60px;
-  color: rgb(255, 0, 255);
-  text-align: center;
+  position: relative; /* Pour superposer au carrousel */
+  z-index: 5; /* Au-dessus du carrousel */
+  padding-bottom: 60px; /* Espace sous contenu */
+  color: rgb(255, 0, 255); /* Couleur texte violet */
+  text-align: center; /* Centrer texte */
 }
 .hero .hero__contenu.animate-text {
-  animation: fadeInUp 1s ease forwards;
+  animation: fadeInUp 1s ease forwards; /* Animation d’apparition */
 }
 
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(20px); /* Position initiale décalée vers le bas */
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0); /* Position finale */
   }
 }
-/* Inscription */
+/* Section inscription */
 .hero_inscription {
-  display: flex;
-  flex-wrap: wrap;
-  width: fit-content;
-  max-width: 100vw;
-  justify-content: center;
-  margin: 2rem auto;
-  position: relative;
+  display: flex; /* Flexbox pour gérer les éléments */
+  flex-wrap: wrap; /* Passage à la ligne si besoin */
+  width: fit-content; /* Largeur au contenu */
+  max-width: 100vw; /* Limite largeur à la fenêtre */
+  justify-content: center; /* Centrer horizontalement */
+  margin: 2rem auto; /* Marge verticale et centrage horizontal */
+  position: relative; /* Position relative pour gestion interne */
 }
 
 .hero_tableau {
-  width: fit-content;
-  border-collapse: collapse;
+  width: fit-content; /* Largeur au contenu */
+  border-collapse: collapse; /* Bordures fusionnées */
+  /* Largeurs fixes pour chaque colonne */
 }
 .hero_tableau_th, .hero_tableau_td {
-  background-color: #a020f0;
-  border: solid black 2px;
-  padding: 5px 8px;
-  text-align: left;
-  white-space: nowrap;
+  background-color: #a020f0; /* Fond violet */
+  border: solid black 2px; /* Bordure noire */
+  padding: 5px 8px; /* Espacement interne */
+  text-align: left; /* Alignement du texte */
+  white-space: nowrap; /* Pas de retour à la ligne */
 }
 .hero_tableau_td button {
-  display: inline-block;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  cursor: pointer;
-  width: fit-content;
-  margin-top: 10px;
+  display: inline-block; /* Affichage en ligne */
+  background-color: #4caf50; /* Vert */
+  color: white; /* Texte blanc */
+  border: none; /* Pas de bordure */
+  cursor: pointer; /* Curseur pointeur */
+  width: fit-content; /* Largeur au contenu */
+  margin-top: 10px; /* Marge au dessus */
 }
 .hero_tableau_td button:hover {
-  background-color: #45a049;
+  background-color: #45a049; /* Vert foncé au survol */
 }
 .hero_tableau_th:nth-child(1), .hero_tableau_td:nth-child(1) {
   width: 15%;
@@ -542,92 +583,100 @@ Les layouts
 
 @media screen and (max-width: 768px) {
   .hero_inscription {
-    margin-top: 2rem;
+    margin-top: 2rem; /* Marge en haut */
   }
   .hero_tableau {
-    width: 100%;
-    border: none;
-    background: transparent;
-    padding-top: 0;
+    width: 100%; /* Pleine largeur */
+    border: none; /* Suppression des bordures */
+    background: transparent; /* Fond transparent */
+    padding-top: 0; /* Pas de padding en haut */
   }
   .hero_tableau tr {
-    display: block;
-    margin-bottom: 1.5rem;
-    background: #f9f9f9;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: block; /* Bloc pour chaque ligne */
+    margin-bottom: 1.5rem; /* Espace entre les lignes */
+    background: #f9f9f9; /* Fond gris clair */
+    border-radius: 8px; /* Bords arrondis */
+    padding: 15px; /* Espacement interne */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
   }
   .hero_tableau_th {
-    display: none;
+    display: none; /* Masquer les en-têtes de colonnes */
   }
   .hero_tableau_td {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
-    border: none;
-    background-color: transparent;
-    text-align: left;
-    white-space: normal;
+    display: flex; /* Flexbox pour chaque cellule */
+    justify-content: space-between; /* Espacement entre éléments */
+    align-items: center; /* Alignement vertical */
+    padding: 8px 0; /* Espacement vertical */
+    border: none; /* Suppression des bordures */
+    background-color: transparent; /* Fond transparent */
+    text-align: left; /* Alignement texte à gauche */
+    white-space: normal; /* Retour à la ligne autorisé */
   }
   .hero_tableau_td:before {
-    content: attr(data-label);
-    font-weight: 700;
-    text-transform: uppercase;
-    width: 35%;
-    color: #6a0dad;
-    flex-shrink: 0;
+    content: attr(data-label); /* Affiche le label depuis data-label */
+    font-weight: 700; /* Gras */
+    text-transform: uppercase; /* Majuscules */
+    width: 35%; /* Largeur fixe */
+    color: #6a0dad; /* Violet doux */
+    flex-shrink: 0; /* Ne se réduit pas */
   }
   .hero_tableau_td input[type=text] {
-    flex-grow: 1;
-    margin-left: 10vw;
-    border: 1.5px solid #a020f0;
-    border-radius: 6px;
-    font-size: 1rem;
-    color: #333;
-    background: #fff;
-    transition: border-color 0.3s ease;
+    flex-grow: 1; /* Prend tout l’espace disponible */
+    margin-left: 10vw; /* Marge à gauche */
+    border: 1.5px solid #a020f0; /* Bordure violette */
+    border-radius: 6px; /* Bords arrondis */
+    font-size: 1rem; /* Taille de police */
+    color: #333; /* Couleur texte sombre */
+    background: #fff; /* Fond blanc */
+    transition: border-color 0.3s ease; /* Transition bordure */
   }
   .hero_tableau_td input[type=text]:focus {
-    outline: none;
-    border-color: #6a0dad;
-    box-shadow: 0 0 6px rgba(106, 13, 173, 0.5);
+    outline: none; /* Pas de contour par défaut */
+    border-color: #6a0dad; /* Bordure violette au focus */
+    box-shadow: 0 0 6px rgba(106, 13, 173, 0.5); /* Ombre violette */
   }
   .hero_tableau_td button {
-    flex-grow: 0;
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-weight: 700;
-    font-size: 1rem;
-    background-color: #6a0dad;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    flex-grow: 0; /* Taille fixe */
+    margin-top: 10px; /* Marge en haut */
+    padding: 10px 20px; /* Espacement interne */
+    font-weight: 700; /* Gras */
+    font-size: 1rem; /* Taille texte */
+    background-color: #6a0dad; /* Violet doux */
+    color: white; /* Texte blanc */
+    border: none; /* Pas de bordure */
+    border-radius: 6px; /* Bords arrondis */
+    cursor: pointer; /* Curseur pointeur */
+    transition: background-color 0.3s ease; /* Transition couleur */
   }
   .hero_tableau_td button:hover {
-    background-color: #4b068f;
+    background-color: #4b068f; /* Violet foncé au survol */
   }
 }
+/* Styles du footer avec fond violet et texte blanc */
 footer {
   background-color: #A020F0;
   color: #ffffff;
 }
 
+/* Conteneur principal du pied de page en flex vertical */
 .piedpage {
   display: flex;
   flex-direction: column;
+  /* Section principale en flex horizontal avec retour à la ligne et espace entre éléments */
 }
 .piedpage__s1 {
   display: flex;
   flex-wrap: wrap;
   gap: 3rem;
   padding: 0 2rem;
+  /* Bloc externe (menus, liens) avec taille fixe */
+  /* Bloc adresse avec bordure à gauche et centrage du texte */
+  /* Bloc description avec bordure gauche et centrage vertical/horizontal */
+  /* Image avec marges, taille, bordure arrondie et ombre portée */
 }
 .piedpage__s1__externe {
   flex: 0 0 20%;
+  /* Menu vertical avec liens */
 }
 .piedpage__s1__externe .menu {
   display: flex;
@@ -640,19 +689,22 @@ footer {
   transition: color 0.3s ease;
 }
 .piedpage__s1__externe .menu a:hover {
-  color: #ffeb3b;
+  color: #ffeb3b; /* Couleur jaune doux au survol */
 }
 .piedpage__s1__adresse {
   flex: 0 0 40%;
   border-left: 2px solid rgba(0, 0, 0, 0.5);
   padding: 0 20px;
-  text-align: center;
+  text-align: center; /* Centre les textes */
+  /* Coordonnées avec marge en bas */
+  /* Zone de recherche avec input stylisé */
 }
 .piedpage__s1__adresse__coord {
   margin-bottom: 1.5rem;
 }
 .piedpage__s1__adresse__recherche {
   margin-top: 1rem;
+  /* Bouton de recherche stylisé */
 }
 .piedpage__s1__adresse__recherche input[type=search],
 .piedpage__s1__adresse__recherche input[type=text] {
@@ -696,38 +748,40 @@ footer {
   flex: 0 0 20%;
   border-left: 2px solid rgba(0, 0, 0, 0.5);
   padding: 0 20px;
-  text-align: center;
+  text-align: center; /* Centre les textes */
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .piedpage__s1__image {
   margin-top: 5rem;
-  height: 15vh;
-  width: 15vw;
+  height: 15vh; /* Hauteur relative à la fenêtre */
+  width: 15vw; /* Largeur relative à la fenêtre */
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: contain; /* Contenir sans découper l'image */
   background-position: center;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  align-self: center;
+  align-self: center; /* Centre l’image dans la colonne */
 }
 
+/* Responsive pour écrans ≤ 800px : empilement vertical et ajustements */
 @media screen and (max-width: 800px) {
   .piedpage__s1 {
     flex-direction: column;
   }
   .piedpage__s1__externe, .piedpage__s1__adresse, .piedpage__s1__description {
-    flex: 1 1 100%;
-    border-left: none;
+    flex: 1 1 100%; /* prennent toute la largeur */
+    border-left: none; /* suppression de la bordure gauche */
     padding: 1rem 0;
-    text-align: center;
+    text-align: center; /* centrage du texte */
   }
   .piedpage__s1__image {
-    width: 50vw;
-    height: 10vh;
+    width: 50vw; /* largeur plus grande en responsive */
+    height: 10vh; /* hauteur réduite */
   }
 }
+/* Conteneur principal de la section 404 prenant tout l'écran */
 .section_404 {
   height: 100vh;
   width: 100vw;
@@ -739,6 +793,11 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  /* Styles communs pour titre et texte avec fond transparent et ombre */
+  /* Titre avec taille et poids spécifique */
+  /* Conteneur de la barre de recherche */
+  /* Bouton pour revenir à l'accueil */
+  /* Navigation additionnelle avec menu centré et espacements */
 }
 .section_404__titre, .section_404__texte {
   max-width: 600px;
@@ -759,12 +818,15 @@ footer {
   margin: 2rem 0;
   width: 100%;
   max-width: 500px;
+  /* Formulaire en flex avec fond transparent et coins arrondis */
 }
 .section_404__search form {
   display: flex;
   background: var(--fond-transparent);
   border-radius: 0.5rem;
   overflow: hidden;
+  /* Input de recherche prenant tout l'espace disponible */
+  /* Bouton submit avec fond bleu foncé et texte blanc */
 }
 .section_404__search form input[type=search] {
   flex: 1;
@@ -773,6 +835,7 @@ footer {
   background: transparent;
   color: var(--texte-couleur);
   font-size: 1rem;
+  /* Placeholder gris clair */
 }
 .section_404__search form input[type=search]::placeholder {
   color: rgba(0, 0, 0, 0.4);
@@ -799,29 +862,33 @@ footer {
   max-width: 600px;
   width: 100%;
   margin-top: 2rem;
+  /* Menu en flex avec retour à la ligne et espacement */
 }
 .section_404__nav .menu {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+  /* Chaque élément du menu avec fond semi-transparent et coins arrondis */
 }
 .section_404__nav .menu .menu-item {
   background-color: rgba(30, 60, 120, 0.5);
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
+  /* Liens bleus sans soulignement */
 }
 .section_404__nav .menu .menu-item a {
   color: blue;
   text-decoration: none;
+  /* Soulignement au survol */
 }
 .section_404__nav .menu .menu-item a:hover {
   text-decoration: underline;
 }
 
 .titre_cat {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(255, 0, 255);
+  display: flex; /* Utilise Flexbox pour organiser les éléments enfants en ligne */
+  align-items: center; /* Centre verticalement les éléments à l’intérieur du conteneur */
+  justify-content: center; /* Centre horizontalement les éléments à l’intérieur du conteneur */
+  background-color: rgb(255, 0, 255); /* Applique une couleur de fond magenta au conteneur */
 }/*# sourceMappingURL=style.css.map */

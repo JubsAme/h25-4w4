@@ -1,8 +1,8 @@
-/*Styles pour les cartes*/
+/* Styles pour les cartes */
 .carte {
-    display: flex;
+    display: flex; /* Utilise Flexbox pour organiser les éléments en colonne */
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; /* Espace entre le haut et le bas */
     margin: 10px 10px;
     padding: 10px;
     font-family: 'Roboto Slab', sans-serif;
@@ -10,61 +10,57 @@
     width: 320px;
 
     &--grande {
-        flex: 1 1 250px;
-        transition: transform 0.3s ease;
+        flex: 1 1 250px; /* Permet à la carte de prendre de l'espace en grand format */
+        transition: transform 0.3s ease; /* Animation fluide lors du hover */
     }
-    &--grande:hover{
-        transform: scale(1.1);
+    &--grande:hover {
+        transform: scale(1.1); /* Agrandissement de la carte au survol */
     }
 
     &__image {
         position: absolute; /* Placer l'image en arrière-plan */
-        background-size: cover; /* Couvre toute la zone */
-        background-position: center; /* Centrer l'image */
-        background-repeat: no-repeat;
-        z-index: -1; /* L'image est derrière le contenu */
+        background-size: cover; /* Couvre toute la zone disponible */
+        background-position: center; /* Centre l'image dans son conteneur */
+        background-repeat: no-repeat; /* Empêche la répétition de l'image */
+        z-index: -1; /* Place l'image derrière le contenu */
         height: 400px;
         width: 340px;
         overflow: hidden;
     }
 
     &__contenu {
-        position: relative; /* Le contenu doit être au-dessus de l'image */
-        background-color: rgba(255, 255, 255, 0.5); /* Fond semi-transparent pour la lisibilité du texte */
-        box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+        position: relative; /* Permet de superposer le contenu sur l’image */
+        background-color: rgba(255, 255, 255, 0.5); /* Fond semi-transparent pour la lisibilité */
+        box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3); /* Ombre portée */
         padding: 10px;
-        z-index: 1; /* Assurer que le contenu soit au-dessus de l'image */
+        z-index: 1; /* Devant l’image */
         height: 400px;
         width: 320px;
+
         .Prix {
             font-size: large;
-            font-weight: bold;
+            font-weight: bold; /* Met en évidence le prix */
         }
     }
+
     &
-    &__conteneurTitre{
-        height: fit-content;
-        width: 340px;
-        background-color: rgba(160, 32, 240, 0.5);
+    &__conteneurTitre {
+        height: fit-content; /* Hauteur adaptée au contenu */
+        width: 340px; /* Attention : différent de la largeur de .carte, peut causer un décalage */
+        background-color: rgba(160, 32, 240, 0.5); /* Violet transparent */
         box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: center; /* Centre horizontalement */
+        align-items: center; /* Centre verticalement */
         text-align: center;
-
-    }
-    &__titre {
-        // Ajoute ici tes styles pour le titre
-
     }
 
     &__description {
-        // Ajoute ici tes styles pour la description
-        font-weight: bold;
+        font-weight: bold; /* Texte en gras */
     }
 
     &__bouton {
-        background-color: rgba(160, 32, 240);
+        background-color: rgba(160, 32, 240); /* Violet vif */
         color: black;
         font-weight: bold;
         border: solid black 2px;
@@ -72,35 +68,32 @@
         padding: 0rem 1rem;
 
         a {
-            text-decoration: none;
-        }
-
-        &--actif {
-            // Ajoute ici tes styles pour l'état actif du bouton
+            text-decoration: none; /* Supprime le soulignement du lien */
         }
     }
 }
+
+/* Style pour les boutons de catégorie */
 .btn-categorie {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  margin: 0.4rem;
-  background-color: #6a1b9a; // violet profond
-  color: #fff;
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  border-radius: 8px;
-  border: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  cursor: pointer;
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    margin: 0.4rem;
+    background-color: #6a1b9a; // violet profond
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
 
-  &:hover {
-    background-color: #8e24aa;
-    transform: scale(1.05);
-  }
+    &:hover {
+        background-color: #8e24aa;
+        transform: scale(1.05); /* Légère augmentation au survol */
+    }
 
-  &:active {
-    transform: scale(0.98);
-  }
+    &:active {
+        transform: scale(0.98); /* Légère réduction lors du clic */
+    }
 }
-

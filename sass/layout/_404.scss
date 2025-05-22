@@ -1,3 +1,4 @@
+/* Conteneur principal de la section 404 prenant tout l'écran */
 .section_404 {
   height: 100vh;
   width: 100vw;
@@ -10,6 +11,7 @@
   align-items: center;
   padding: 2rem;
 
+  /* Styles communs pour titre et texte avec fond transparent et ombre */
   &__titre, &__texte {
     max-width: 600px;
     width: 100%;
@@ -22,22 +24,26 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
 
+  /* Titre avec taille et poids spécifique */
   &__titre {
     font-size: 3rem;
     font-weight: bold;
   }
 
+  /* Conteneur de la barre de recherche */
   &__search {
     margin: 2rem 0;
     width: 100%;
     max-width: 500px;
 
+    /* Formulaire en flex avec fond transparent et coins arrondis */
     form {
       display: flex;
       background: var(--fond-transparent);
       border-radius: 0.5rem;
       overflow: hidden;
 
+      /* Input de recherche prenant tout l'espace disponible */
       input[type="search"] {
         flex: 1;
         padding: 1rem;
@@ -46,11 +52,13 @@
         color: var(--texte-couleur);
         font-size: 1rem;
 
+        /* Placeholder gris clair */
         &::placeholder {
           color: rgba(0, 0, 0, 0.4);
         }
       }
 
+      /* Bouton submit avec fond bleu foncé et texte blanc */
       input[type="submit"] {
         background-color: #003366;
         color: white;
@@ -62,6 +70,7 @@
     }
   }
 
+  /* Bouton pour revenir à l'accueil */
   &__boutonAccueil {
     background-color: yellow;
     color: lightblue;
@@ -73,26 +82,31 @@
     margin-top: 1rem;
   }
 
+  /* Navigation additionnelle avec menu centré et espacements */
   &__nav {
     max-width: 600px;
     width: 100%;
     margin-top: 2rem;
 
+    /* Menu en flex avec retour à la ligne et espacement */
     .menu {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
 
+      /* Chaque élément du menu avec fond semi-transparent et coins arrondis */
       .menu-item {
         background-color: rgba(30, 60, 120, 0.5);
         border-radius: 0.5rem;
         padding: 0.5rem 1rem;
 
+        /* Liens bleus sans soulignement */
         a {
           color: blue;
           text-decoration: none;
 
+          /* Soulignement au survol */
           &:hover {
             text-decoration: underline;
           }

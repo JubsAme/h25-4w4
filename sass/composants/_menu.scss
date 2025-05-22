@@ -1,14 +1,16 @@
-/*Styles pour le menu*/
+/* Styles globaux pour le menu de navigation */
 .menu {
     display: flex;
     gap: 10px;
     list-style: none;
 
+    /* Sur petits écrans, passage en menu vertical plein largeur */
     @media screen and (max-width: 800px) {
-        flex-direction: column; // Menu vertical sur petits écrans
+        flex-direction: column; 
         width: 100%;
     }
 
+    /* Styles pour chaque élément du menu */
     &-item {
         a {
             text-decoration: none;

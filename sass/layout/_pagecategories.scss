@@ -1,6 +1,6 @@
-.titre_cat{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(255, 0, 255);
+.titre_cat {
+  display: flex; /* Utilise Flexbox pour organiser les éléments enfants en ligne */
+  align-items: center; /* Centre verticalement les éléments à l’intérieur du conteneur */
+  justify-content: center; /* Centre horizontalement les éléments à l’intérieur du conteneur */
+  background-color: rgb(255, 0, 255); /* Applique une couleur de fond magenta au conteneur */
 }

@@ -1,3 +1,4 @@
+/* Section recherche avec largeur max, centrage et style léger */
 .recherche__section {
   max-width: 700px;
   margin: 2rem auto;
@@ -6,21 +7,25 @@
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 
+  /* Paragraphe général avec taille et couleur de texte */
   p {
     font-size: 1rem;
     color: #333;
     margin-bottom: 1.2rem;
   }
 
+  /* Article résultat individuel avec marge et bordure séparatrice */
   article {
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #ddd;
 
+    /* Titre de résultat avec marge et taille */
     h5 {
       margin: 0 0 0.3rem 0;
       font-size: 1.2rem;
 
+      /* Lien dans le titre avec couleur et effet au survol */
       a {
         color: #007acc;
         text-decoration: none;
@@ -31,6 +36,7 @@
       }
     }
 
+    /* Description du résultat avec taille de texte et interlignage */
     p {
       font-size: 0.95rem;
       color: #555;
@@ -38,13 +44,14 @@
     }
   }
 
+  /* Ligne horizontale légère comme séparation */
   hr {
     border: none;
     border-bottom: 1px solid #eee;
     margin: 0.8rem 0;
   }
 
-  // Style pour message "Aucun résultat"
+  /* Style spécifique au message "Aucun résultat" */
   > p {
     font-style: italic;
     color: #999;
@@ -53,7 +60,7 @@
   }
 }
 
-// Responsive : pour écrans petits
+/* Adaptation responsive pour petits écrans */
 @media (max-width: 480px) {
   .recherche__section {
     padding: 0.8rem;

@@ -1,3 +1,4 @@
+/* Conteneur principal de l'entête en flex avec espace entre éléments et alignement vertical centré */
 .entete {
   display: flex;
   justify-content: space-between;
@@ -8,12 +9,14 @@
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 
+  /* Navigation principale en ligne avec espacement */
   &__navigation {
     display: flex;
     align-items: center;
     flex-direction: row;
     gap: 30px;
 
+    /* Styles des liens de navigation */
     a {
       color: #333;
       text-decoration: none;
@@ -23,20 +26,22 @@
       border-radius: 5px;
       transition: background-color 0.3s ease, color 0.3s ease;
 
+      /* Effets au survol et au focus */
       &:hover,
       &:focus {
-        background-color: #a020f0;
+        background-color: #a020f0; /* violet */
         color: white;
         outline: none;
       }
     }
 
+    /* Navigation cachée et stylisée en menu vertical sur petit écran */
     @media screen and (max-width: 800px) {
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.5s ease, visibility 0s 0.5s;
       position: absolute;
-      top: 100%;
+      top: 100%; /* juste en dessous de l'entête */
       left: 0;
       width: 100vw;
       background-color: rgba(255, 255, 255, 0.95);
@@ -48,6 +53,7 @@
     }
   }
 
+  /* Icone burger (menu hamburger) caché par défaut */
   .burger-icon {
     display: none;
     cursor: pointer;
@@ -59,6 +65,7 @@
     padding-right: 40px;
     z-index: 1000;
 
+    /* Barres du burger */
     .burger-bar {
       width: 100%;
       height: 5px;
@@ -67,21 +74,25 @@
       transition: all 0.3s ease-in-out;
     }
 
+    /* Affiche le burger sur petit écran */
     @media screen and (max-width: 800px) {
       display: flex;
     }
   }
 
+  /* Case à cocher invisible pour toggle du menu */
   .burger-toggle {
     display: none;
   }
 
+  /* Affiche la navigation quand le toggle est coché */
   .burger-toggle:checked + .burger-icon + .entete__navigation {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.5s ease, visibility 0s 0s;
   }
 
+  /* Animation de la première barre du burger en croix */
   .burger-toggle:checked + .burger-icon .burger-bar:nth-child(1) {
     transform: rotate(45deg);
     position: relative;
@@ -89,10 +100,12 @@
     transform-origin: center;
   }
 
+  /* Masque la barre centrale du burger */
   .burger-toggle:checked + .burger-icon .burger-bar:nth-child(2) {
     opacity: 0;
   }
 
+  /* Animation de la troisième barre du burger en croix */
   .burger-toggle:checked + .burger-icon .burger-bar:nth-child(3) {
     transform: rotate(-45deg);
     position: relative;

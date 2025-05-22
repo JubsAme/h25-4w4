@@ -1,123 +1,125 @@
 .hero {
-  position: relative;
-  min-height: 100vh;
-  background-repeat: no-repeat;
+  position: relative; /* Conteneur principal en position relative */
+  min-height: 100vh; /* Hauteur minimale de 100% de la hauteur de la fenêtre */
+  background-repeat: no-repeat; /* Empêche la répétition de l’arrière-plan */
 
   .hero__radio {
-    position: relative;
+    position: relative; /* Conteneur relatif pour éléments enfants */
 
     input.hero__radio__input {
-      display: none;
+      display: none; /* Cache les inputs radio */
     }
 
     .hero__radio__labels {
-      position: absolute;
-      top: 700px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 20px;
-      z-index: 10;
+      position: absolute; /* Positionne les labels au-dessus */
+      top: 700px; /* Décalage vertical */
+      left: 50%; /* Centrage horizontal */
+      transform: translateX(-50%); /* Ajustement pour centrage exact */
+      display: flex; /* Disposition en ligne */
+      gap: 20px; /* Espacement entre les boutons */
+      z-index: 10; /* Superposition au-dessus des autres éléments */
     }
 
     label {
-      width: 20px;
+      width: 20px; /* Taille carrée */
       height: 20px;
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 50%;
-      text-align: center;
-      line-height: 20px;
-      font-weight: bold;
-      cursor: pointer;
-      user-select: none;
-      font-size: 14px;
+      background: rgba(255, 255, 255, 0.7); /* Fond semi-transparent */
+      border-radius: 50%; /* Forme ronde */
+      text-align: center; /* Centrer texte */
+      line-height: 20px; /* Alignement vertical */
+      font-weight: bold; /* Texte en gras */
+      cursor: pointer; /* Curseur pointeur */
+      user-select: none; /* Empêche la sélection */
+      font-size: 14px; /* Taille de police */
     }
 
     .hero__carrousel {
-      position: absolute;
+      position: absolute; /* Positionné par-dessus le conteneur */
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.5s ease-in-out;
-      z-index: 0;
+      width: 100vw; /* Largeur pleine fenêtre */
+      height: 100vh; /* Hauteur pleine fenêtre */
+      background-size: cover; /* Image couvre tout */
+      background-position: center; /* Centrage image */
+      opacity: 0; /* Initialement invisible */
+      pointer-events: none; /* Pas d’interactions */
+      transition: opacity 0.5s ease-in-out; /* Transition douce */
+      z-index: 0; /* Derrière les autres éléments */
     }
 
+    /* Affiche la diapo active selon radio sélectionné */
     #radio0:checked ~ #carrousel0,
     #radio1:checked ~ #carrousel1,
     #radio2:checked ~ #carrousel2 {
       opacity: 1;
-      pointer-events: auto;
+      pointer-events: auto; /* Rendre interactif */
     }
   }
 
   .hero__contenu {
-    position: relative;
-    z-index: 5;
-    padding-bottom: 60px;
-    color: rgb(255, 0, 255);
-    text-align: center;
+    position: relative; /* Pour superposer au carrousel */
+    z-index: 5; /* Au-dessus du carrousel */
+    padding-bottom: 60px; /* Espace sous contenu */
+    color: rgb(255, 0, 255); /* Couleur texte violet */
+    text-align: center; /* Centrer texte */
 
     &.animate-text {
-      animation: fadeInUp 1s ease forwards;
+      animation: fadeInUp 1s ease forwards; /* Animation d’apparition */
     }
   }
 }
 
-// Animation de texte
+// Animation pour faire apparaître le texte en montant
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(20px); /* Position initiale décalée vers le bas */
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0); /* Position finale */
   }
 }
 
-/* Inscription */
+/* Section inscription */
 .hero_inscription {
-  display: flex;
-  flex-wrap: wrap;
-  width: fit-content;
-  max-width: 100vw;
-  justify-content: center;
-  margin: 2rem auto;
-  position: relative; // plus de absolute ici
+  display: flex; /* Flexbox pour gérer les éléments */
+  flex-wrap: wrap; /* Passage à la ligne si besoin */
+  width: fit-content; /* Largeur au contenu */
+  max-width: 100vw; /* Limite largeur à la fenêtre */
+  justify-content: center; /* Centrer horizontalement */
+  margin: 2rem auto; /* Marge verticale et centrage horizontal */
+  position: relative; /* Position relative pour gestion interne */
 }
 
 .hero_tableau {
-  width: fit-content;
-  border-collapse: collapse;
+  width: fit-content; /* Largeur au contenu */
+  border-collapse: collapse; /* Bordures fusionnées */
 
   &_th,
   &_td {
-    background-color: #a020f0;
-    border: solid black 2px;
-    padding: 5px 8px;
-    text-align: left;
-    white-space: nowrap;
+    background-color: #a020f0; /* Fond violet */
+    border: solid black 2px; /* Bordure noire */
+    padding: 5px 8px; /* Espacement interne */
+    text-align: left; /* Alignement du texte */
+    white-space: nowrap; /* Pas de retour à la ligne */
   }
 
   &_td button {
-    display: inline-block;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    width: fit-content;
-    margin-top: 10px;
+    display: inline-block; /* Affichage en ligne */
+    background-color: #4caf50; /* Vert */
+    color: white; /* Texte blanc */
+    border: none; /* Pas de bordure */
+    cursor: pointer; /* Curseur pointeur */
+    width: fit-content; /* Largeur au contenu */
+    margin-top: 10px; /* Marge au dessus */
 
     &:hover {
-      background-color: #45a049;
+      background-color: #45a049; /* Vert foncé au survol */
     }
   }
 
+  /* Largeurs fixes pour chaque colonne */
   &_th:nth-child(1),
   &_td:nth-child(1) { width: 15%; }
 
@@ -134,85 +136,84 @@
   &_td:nth-child(5) { width: 15%; }
 }
 
-// Responsive
+// Responsive - pour écrans petits
 @media screen and (max-width: 768px) {
   .hero_inscription {
-    margin-top: 2rem;
+    margin-top: 2rem; /* Marge en haut */
   }
 
   .hero_tableau {
-    width: 100%; // prend toute la largeur disponible
-    border: none; // on enlève les bordures de table classiques
-    background: transparent;
-    padding-top: 0;
+    width: 100%; /* Pleine largeur */
+    border: none; /* Suppression des bordures */
+    background: transparent; /* Fond transparent */
+    padding-top: 0; /* Pas de padding en haut */
 
     tr {
-      display: block;
-      margin-bottom: 1.5rem;
-      background: #f9f9f9;
-      border-radius: 8px;
-      padding: 15px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: block; /* Bloc pour chaque ligne */
+      margin-bottom: 1.5rem; /* Espace entre les lignes */
+      background: #f9f9f9; /* Fond gris clair */
+      border-radius: 8px; /* Bords arrondis */
+      padding: 15px; /* Espacement interne */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Ombre légère */
     }
 
     &_th {
-      display: none;
+      display: none; /* Masquer les en-têtes de colonnes */
     }
 
     &_td {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 0;
-      border: none;
-      background-color: transparent;
-      text-align: left;
-      white-space: normal;
+      display: flex; /* Flexbox pour chaque cellule */
+      justify-content: space-between; /* Espacement entre éléments */
+      align-items: center; /* Alignement vertical */
+      padding: 8px 0; /* Espacement vertical */
+      border: none; /* Suppression des bordures */
+      background-color: transparent; /* Fond transparent */
+      text-align: left; /* Alignement texte à gauche */
+      white-space: normal; /* Retour à la ligne autorisé */
 
       &:before {
-        content: attr(data-label);
-        font-weight: 700;
-        text-transform: uppercase;
-        width: 35%;
-        color: #6a0dad; // violet doux pour le label
-        flex-shrink: 0;
+        content: attr(data-label); /* Affiche le label depuis data-label */
+        font-weight: 700; /* Gras */
+        text-transform: uppercase; /* Majuscules */
+        width: 35%; /* Largeur fixe */
+        color: #6a0dad; /* Violet doux */
+        flex-shrink: 0; /* Ne se réduit pas */
       }
 
       input[type="text"] {
-        flex-grow: 1;
-        margin-left: 10vw;
-        border: 1.5px solid #a020f0;
-        border-radius: 6px;
-        font-size: 1rem;
-        color: #333;
-        background: #fff;
-        transition: border-color 0.3s ease;
+        flex-grow: 1; /* Prend tout l’espace disponible */
+        margin-left: 10vw; /* Marge à gauche */
+        border: 1.5px solid #a020f0; /* Bordure violette */
+        border-radius: 6px; /* Bords arrondis */
+        font-size: 1rem; /* Taille de police */
+        color: #333; /* Couleur texte sombre */
+        background: #fff; /* Fond blanc */
+        transition: border-color 0.3s ease; /* Transition bordure */
 
         &:focus {
-          outline: none;
-          border-color: #6a0dad;
-          box-shadow: 0 0 6px rgba(106, 13, 173, 0.5);
+          outline: none; /* Pas de contour par défaut */
+          border-color: #6a0dad; /* Bordure violette au focus */
+          box-shadow: 0 0 6px rgba(106, 13, 173, 0.5); /* Ombre violette */
         }
       }
 
       button {
-        flex-grow: 0;
-        margin-top: 10px;
-        padding: 10px 20px;
-        font-weight: 700;
-        font-size: 1rem;
-        background-color: #6a0dad;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+        flex-grow: 0; /* Taille fixe */
+        margin-top: 10px; /* Marge en haut */
+        padding: 10px 20px; /* Espacement interne */
+        font-weight: 700; /* Gras */
+        font-size: 1rem; /* Taille texte */
+        background-color: #6a0dad; /* Violet doux */
+        color: white; /* Texte blanc */
+        border: none; /* Pas de bordure */
+        border-radius: 6px; /* Bords arrondis */
+        cursor: pointer; /* Curseur pointeur */
+        transition: background-color 0.3s ease; /* Transition couleur */
 
         &:hover {
-          background-color: #4b068f;
+          background-color: #4b068f; /* Violet foncé au survol */
         }
       }
     }
   }
 }
-

@@ -1,40 +1,55 @@
-.destination{
+/* Conteneur principal pour la section destination centré verticalement et horizontalement */
+.destination {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  &__list{
+
+  /* Liste des destinations avec largeur relative et hauteur automatique */
+  &__list {
     width: 90vw;
     height: fit-content;
   }
 }
-.categorie__ul{
+
+/* Liste des catégories pleine largeur avec centrage des éléments */
+.categorie__ul {
   width: 100vw;
   height: fit-content;
   align-items: center;
   justify-content: center;
-  &__li{
+
+  /* Élément de liste catégorie avec curseur pointer et bordure */
+  &__li {
     cursor: pointer;
     border: 2px solid black;
-    &:hover{
-        text-decoration: underline;
-        color: #2c3e50;
+
+    /* Style au survol : souligné et couleur foncée */
+    &:hover {
+      text-decoration: underline;
+      color: #2c3e50;
     }
   }
 }
-.btn-lire-plus{
+
+/* Bouton "lire plus" avec fond magenta, bordure noire et style clic */
+.btn-lire-plus {
   background-color: rgb(255, 0, 255);
   border: 2px solid black;
   cursor: pointer;
   padding: 2px;
   text-decoration: none;
 }
-.titre_destination{
+
+/* Titre de la section destination centré avec fond cyan */
+.titre_destination {
   background-color: #00ffff;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+/* Liste des destinations masquée par défaut avec transition de la hauteur */
 .destination__list {
   max-height: 0;
   overflow: hidden;
@@ -42,6 +57,7 @@
   padding: 0 1rem;
 }
 
+/* Classe pour ouvrir la liste avec hauteur maximale */
 .destination__list.open {
   max-height: 1000px;
 }

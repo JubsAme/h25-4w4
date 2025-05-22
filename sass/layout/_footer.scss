@@ -1,21 +1,26 @@
+/* Styles du footer avec fond violet et texte blanc */
 footer {
   background-color: #A020F0;
   color: #ffffff;
 }
 
+/* Conteneur principal du pied de page en flex vertical */
 .piedpage {
   display: flex;
   flex-direction: column;
 
+  /* Section principale en flex horizontal avec retour à la ligne et espace entre éléments */
   &__s1 {
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
     padding: 0 2rem;
 
+    /* Bloc externe (menus, liens) avec taille fixe */
     &__externe {
       flex: 0 0 20%;
 
+      /* Menu vertical avec liens */
       .menu {
         display: flex;
         flex-direction: column;
@@ -27,22 +32,25 @@ footer {
           transition: color 0.3s ease;
 
           &:hover {
-            color: #ffeb3b; // un jaune doux au hover
+            color: #ffeb3b; /* Couleur jaune doux au survol */
           }
         }
       }
     }
 
+    /* Bloc adresse avec bordure à gauche et centrage du texte */
     &__adresse {
       flex: 0 0 40%;
       border-left: 2px solid rgba(0, 0, 0, 0.5);
       padding: 0 20px;
-      text-align: center; // CENTRAGE DES TEXTES
+      text-align: center; /* Centre les textes */
 
+      /* Coordonnées avec marge en bas */
       &__coord {
         margin-bottom: 1.5rem;
       }
 
+      /* Zone de recherche avec input stylisé */
       &__recherche {
         margin-top: 1rem;
 
@@ -71,6 +79,7 @@ footer {
           }
         }
 
+        /* Bouton de recherche stylisé */
         button {
           margin-top: 0.5rem;
           padding: 0.5rem 1.5rem;
@@ -89,31 +98,33 @@ footer {
       }
     }
 
+    /* Bloc description avec bordure gauche et centrage vertical/horizontal */
     &__description {
       flex: 0 0 20%;
       border-left: 2px solid rgba(0, 0, 0, 0.5);
       padding: 0 20px;
-      text-align: center; // CENTRAGE DES TEXTES
+      text-align: center; /* Centre les textes */
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
+    /* Image avec marges, taille, bordure arrondie et ombre portée */
     &__image {
       margin-top: 5rem;
-      height: 15vh; // un peu plus haute pour meilleure visibilité
-      width: 15vw;
+      height: 15vh; /* Hauteur relative à la fenêtre */
+      width: 15vw; /* Largeur relative à la fenêtre */
       background-repeat: no-repeat;
-      background-size: contain; // mieux que cover pour ne pas couper l'image
+      background-size: contain; /* Contenir sans découper l'image */
       background-position: center;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      align-self: center; // centrer l’image dans la colonne
+      align-self: center; /* Centre l’image dans la colonne */
     }
   }
 }
 
-// Responsive
+/* Responsive pour écrans ≤ 800px : empilement vertical et ajustements */
 @media screen and (max-width: 800px) {
   .piedpage__s1 {
     flex-direction: column;
@@ -121,15 +132,15 @@ footer {
     &__externe,
     &__adresse,
     &__description {
-      flex: 1 1 100%;
-      border-left: none;
+      flex: 1 1 100%; /* prennent toute la largeur */
+      border-left: none; /* suppression de la bordure gauche */
       padding: 1rem 0;
-      text-align: center;
+      text-align: center; /* centrage du texte */
     }
 
     &__image {
-      width: 50vw;
-      height: 10vh;
+      width: 50vw; /* largeur plus grande en responsive */
+      height: 10vh; /* hauteur réduite */
     }
   }
 }
