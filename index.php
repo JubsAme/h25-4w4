@@ -9,10 +9,10 @@
 
         <article>
             <!-- Affiche le titre de l’article -->
-            <h2><?php the_title(); ?></h2>
+            <h2 class = "pays__nom"><?php the_title(); ?></h2>
 
             <!-- Affiche le contenu complet de l’article -->
-            <div><?php the_content() ?></div>
+            <div class = "pays__intro"><?php the_content() ?></div>
         </article>
 
         <!-- Fin de la boucle -->

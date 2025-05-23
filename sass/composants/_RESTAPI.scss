@@ -61,3 +61,41 @@
 .destination__list.open {
   max-height: 3000px;
 }
+
+/* --- AJOUT ACCORDEON CHECKBOX --- */
+
+.destination__article {
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+
+  /* Checkbox cachée */
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  /* Label titre cliquable */
+  label {
+    display: block;
+    background-color: #00ffff;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+  }
+
+  /* Contenu caché par défaut */
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding: 0 10px;
+  }
+
+  /* Contenu visible quand checkbox cochée */
+  input[type="checkbox"]:checked ~ .content {
+    max-height: 1000px; /* hauteur suffisante pour contenu */
+    padding: 10px;
+  }
+}
