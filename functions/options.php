@@ -98,4 +98,8 @@ function categorie_par_destination($cat_a_retirer = null) {
 
   return $output;
 }
+function charger_scripts_pays() {
+  wp_enqueue_script('pays-js', get_template_directory_uri() . '/js/pays.js', [], null, true);
+}
+add_action('wp_enqueue_scripts', 'charger_scripts_pays');
 ?>

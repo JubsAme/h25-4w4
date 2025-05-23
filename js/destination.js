@@ -5,7 +5,7 @@
   console.log("destination.js");
 
   let categoryId = 3; // catégorie par défaut
-  const domaine = window.origin + "/monprojet/";
+  const domaine = window.origin + "/4w4_19/";
 
   // Initialisation : parcours des boutons et chargement initial
   parcourir_bouton();

@@ -15,4 +15,18 @@ get_header(); // Appelle l'en-tête du site (header.php)
     </article>
 <?php endwhile; endif; ?>
 
+<!-- Section des destinations avec liste des pays et titre -->
+<section class="destination">
+
+  <!-- Conteneur où le script JS injectera les boutons des pays -->
+  <div class="pays__container"></div>
+
+  <h2 class="destination__titre">Articles liés au pays sélectionné</h2>
+
+  <!-- Conteneur où s’afficheront les destinations chargées dynamiquement -->
+  <div class="destination__list"></div>
+
+</section>
+
+
 <?php get_footer(); // Appelle le pied de page du site (footer.php) ?>
