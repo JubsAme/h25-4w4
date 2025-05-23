@@ -11,7 +11,11 @@ get_header(); // Appelle l'en-tête du site (header.php)
         <div class = "pays__intro">
             <?php the_content(); ?> <!-- Affiche le contenu principal de la page -->
         </div>
-        <?php genere_vagues_pays(); ?> <!-- Appelle la fonction personnalisée -->
+        
+        <?php 
+        $couleur_haut = #1E199E;
+        $couleur_bas = #131135;
+        creer_vague_ef($couleur_haut, $couleur_bas); ?> <!-- Appelle la fonction personnalisée -->
     </article>
 <?php endwhile; endif; ?>
 

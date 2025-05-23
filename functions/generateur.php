@@ -65,10 +65,16 @@ function afficher_icones_reseaux_svg() {
     }
     echo '</div>';
 }
-function genere_vagues_pays(){ ?>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-  <path fill="#0099ff" fill-opacity="1" d="M0,96L60,90.7C120,85,240,75,360,96C480,117,600,171,720,181.3C840,192,960,160,1080,133.3C1200,107,1320,85,1380,74.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-</svg>
-<?php }
+function creer_vague_ef($couleur_haut, $couleur_bas) {
+    ?>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="display:block; background-color: <?= esc_attr($couleur_haut) ?>">
+        <path  fill="<?= esc_attr($couleur_haut) ?>" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"style="display:block; background-color: <?= esc_attr($couleur_bas) ?>">
+        <path fill="<?= esc_attr($couleur_bas) ?>" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+        </path>
+    </svg>
+<?php
+}
 
 ?>
