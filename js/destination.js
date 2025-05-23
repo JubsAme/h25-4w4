@@ -18,11 +18,9 @@
     
     categorie__ul__li.forEach(elm => {
       elm.addEventListener('mousedown', function(){
-        // Affiche le tag et l'id de catégorie du bouton cliqué
-        console.log(elm.tagName);
-        console.log("elm.dataset.category_id = ", elm.dataset.category_id);
-        // Lance la récupération des destinations de la catégorie sélectionnée
-        mon_fetch(elm.dataset.category_id);
+        const selectedId = elm.dataset.category_id;
+        console.log("elm.dataset.category_id = ", selectedId);
+        mon_fetch(selectedId);
       });
     });
   }
@@ -35,36 +33,37 @@
     // Fermer l'accordéon avant de charger les nouvelles données
     destinationList.classList.remove('open');
 
+    // Forcer un reflow pour que le retrait de la classe soit pris en compte
+    void destinationList.offsetHeight;
+
     // Appel API avec fetch
     fetch(apiUrl)
       .then(response => response.json()) // Convertit la réponse en JSON
       .then(data => {
         // Vide le contenu avant d'ajouter les nouvelles destinations
         destinationList.innerHTML = "";
+
         if (data.length === 0) {
-          // Message si aucune destination trouvée
           destinationList.innerHTML = "<p>Aucune destination trouvée.</p>";
-          return;
+        } else {
+          // Pour chaque article reçu, on crée un bloc HTML
+          data.forEach(article => {
+            const articleElement = document.createElement('div');
+            articleElement.innerHTML = `
+              <h3 class="titre_destination">${article.title.rendered}</h3>
+              <p>${article.excerpt.rendered}</p>
+              <a href="${article.link}" class="btn-lire-plus">Lire plus</a>
+            `;
+            destinationList.appendChild(articleElement);
+          });
         }
-        // Pour chaque article reçu, on crée un bloc HTML
-        data.forEach(article => {
-          const articleElement = document.createElement('div');
-          articleElement.innerHTML = `
-            <h3 class="titre_destination">${article.title.rendered}</h3>
-            <p>${article.excerpt.rendered}</p>
-            <a href="${article.link}" class="btn-lire-plus">Lire plus</a>
-          `;
-          // Ajoute ce bloc dans la liste des destinations
-          destinationList.appendChild(articleElement);
-        });
 
         // Rouvrir l'accordéon pour déclencher l'animation d'ouverture
         setTimeout(() => {
           destinationList.classList.add('open');
-        }, 10);
+        }, 50);
       })
       .catch(error => {
-        // Affiche une erreur dans la console en cas de problème réseau ou autre
         console.error('Erreur lors de la récupération des articles:', error);
       });
   }

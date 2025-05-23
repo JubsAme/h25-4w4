@@ -53,11 +53,11 @@
 .destination__list {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease;
+  transition: max-height 2s ease;
   padding: 0 1rem;
 }
 
 /* Classe pour ouvrir la liste avec hauteur maximale */
 .destination__list.open {
-  max-height: 1000px;
+  max-height: 3000px;
 }
